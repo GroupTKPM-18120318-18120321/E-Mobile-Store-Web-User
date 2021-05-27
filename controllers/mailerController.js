@@ -65,10 +65,12 @@ exports.checkFormAuth = async (req, res, next) => {
     else {
         let checkOTP = await bcrypt.compare(account.name, req.body.maxacnhan);
         if (count === 1) {
+            userService.setTemporaryAccount(req,res,next);
             res.redirect("/users/register");
         }
         if (checkOTP) {
             await userService.addNewUser(account);
+            userService.setTemporaryAccount(req,res,next);
             res.redirect("/users/login");
         }
         else {
