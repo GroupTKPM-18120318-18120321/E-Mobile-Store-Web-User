@@ -2,16 +2,15 @@ const mongoose=require("mongoose");
 
 console.log("db.js 1");
 
-const uri =
-    "mongodb+srv://hexad:%23Dd18212227@cluster0.ecnii.mongodb.net/StoreManager?retryWrites=true&w=majority";
+const uri = process.env.PRODUCTS_MONGODB_URL;
 
-const connectDB =async()=>{
+const connectDB = async()=>{
     try {
         await mongoose.connect(uri,{
             useCreateIndex:true,
             useNewUrlParser: true,
             useUnifiedTopology:true,
-            useFindAndModify:true
+            useFindAndModify:false
         });
         console.log("Connect successful");
     } catch (error) {

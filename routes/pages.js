@@ -1,10 +1,10 @@
 var express = require('express');
 var router = express.Router();
-var electronicController = require('../controllers/eletronicController');
+var productController = require('../controllers/productController');
 //const usersController = require('../controllers/usersController');
 
 
-router.get('/checkout', electronicController.checkout);
-router.get('/payment', electronicController.payment);
+router.get('/checkout', productController.checkout);
+router.get('/payment', productController.payment);
 
 module.exports = router;

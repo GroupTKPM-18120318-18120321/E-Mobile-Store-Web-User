@@ -1,0 +1,52 @@
+<!-- log in -->
+{{#section 'css'}}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href="/account/css/style.css" rel="stylesheet" type="text/css" media="all" />
+{{/section}}
+
+<div class="modal-dialog" role="document">
+    <div class="modal-content">
+        <div class="border-bottom">
+            <div class="form-group" style="margin-left: 30px;">
+                <div class="row">
+                    <h5 class="modal-title">Log In</h5>
+                </div>
+                <div class="row" style="display: {{notify}}" id="warning_password">
+                    <h5 class="text-danger"><i class="fa fa-warning"></i> {{message}}</h5>
+                </div>
+            </div>
+        </div>
+        <div class="modal-body">
+            <form action="#" method="post">
+                <div class="form-group">
+                    <label class="col-form-label">Username</label>
+                    <input type="text" class="form-control" placeholder=" " name="username" required="">
+                </div>
+                <div class="form-group">
+                    <label class="col-form-label">Password</label>
+                    <input type="password" class="form-control" placeholder=" " name="password" required="">
+                </div>
+                <div class="right-w3l">
+                    <input type="submit" class="form-control" value="Log in">
+                </div>
+                <div class="right-w3l">
+                    <a class="btn btn-outline-dark form-control" href="/auth/google" role="button"
+                        style="text-transform:none">
+                        <img width="20px" style="margin-bottom:3px; margin-right:5px" alt="Google sign-in"
+                            src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/512px-Google_%22G%22_Logo.svg.png" />
+                        Login with Google
+                    </a>
+                </div>
+                <div class="sub-w3l">
+
+                    <a href="/mail/forgetpass">Quên mật khẩu?</a>
+
+                </div>
+                <p class="text-center dont-do mt-3">Don't have an account?
+                    <a href="/users/register">
+                        Register Now</a>
+                </p>
+            </form>
+        </div>
+    </div>
+</div>

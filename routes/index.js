@@ -1,12 +1,15 @@
 var express = require('express');
 var router = express.Router();
-var electronicController = require('../controllers/eletronicController');
+var productController = require('../controllers/productController');
+
 //const usersController = require('../controllers/usersController');
 
 /* GET home page. */
 console.log("index.js");
-router.get('/', electronicController.product);
-router.get('/about', electronicController.about);
-router.get('/contact', electronicController.contact);
+router.get('/', productController.product);
+router.get('/about', productController.about);
+router.get('/contact', productController.contact);
+
+
 
 module.exports = router;
