@@ -1,103 +1,150 @@
+{{#if user}}
 <div class="ads-grid py-sm-5 py-43">
     <div class="container py-xl-4 py-lg-2">
-
-       
-        
         <div class="row">
-            <div class="col-sm-10"><h1>{{user.name}}</h1></div>
-        </div>	
+            <div class="col-sm-10">
+                <h1>{{user.name}}</h1>
+            </div>
+        </div>
         <hr>
         <div class="container bootstrap snippet">
             <div class="row">
-                <div class="col-sm-3"><!--left col-->
+                <div class="col-sm-3">
+                    <!--left col-->
                     <div class="text-center">
-                       <div >
-                            <img src={{user.avatar}} style="width:220px; height: 220px !important;" class="avatar rounded-circle img-thumbnail thumbnail" id="previewImg"
-                                alt="avatar">
+                        <div>
+                            <img src={{user.avatar}} style="width:220px; height: 220px !important;"
+                                class="avatar rounded-circle img-thumbnail thumbnail" id="previewImg" alt="avatar">
                         </div>
                         <div class="mt-3"><strong>ID: </strong><span>{{foundAcc._id}}</span></div>
-                        <button class="btn btn-success mt-3" data-toggle="modal" data-target="#changeAvt">Đổi ảnh đại diện</button>
+                        <button class="btn btn-success mt-3" data-toggle="modal" data-target="#changeAvt">Đổi ảnh đại
+                            diện</button>
 
                         <!-- Modal -->
-                        <div class="modal fade" id="changeAvt" tabindex="-1" role="dialog" aria-labelledby="changeAvtLabel" aria-hidden="true">
+                        <div class="modal fade" id="changeAvt" tabindex="-1" role="dialog"
+                            aria-labelledby="changeAvtLabel" aria-hidden="true">
                             <div class="modal-dialog modal-lg" role="document">
-                            <div class="modal-content">
-                                 <form action="/users/edit/{{user._id}}?_method=PUT" method="POST" enctype="multipart/form-data">
-                                    <input type="hidden" name="_method" value="PUT">
-                                    <input class="" name="_id" hidden value={{user._id}}></input>
-                                    <div class="modal-header">
-                                        <h5 class="modal-title" id="changeAvtLabel">Chọn ảnh đại diện mới</h5>
-                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                            <span aria-hidden="true">&times;</span>
-                                        </button>
-                                    </div>
-                                    <div class="modal-body">
-                                        <div class="custom-file">
-                                            <input type="file" id="customerAvt" name="customerAvt" onchange="readURL(this);">
+                                <div class="modal-content">
+                                    <form action="/users/edit/{{user._id}}?_method=PUT" method="POST"
+                                        enctype="multipart/form-data">
+                                        <input type="hidden" name="_method" value="PUT">
+                                        <input class="" name="_id" hidden value={{user._id}}></input>
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="changeAvtLabel">Chọn ảnh đại diện mới</h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
                                         </div>
-                                    </div>
-                                    <div class="modal-footer">
-                                    <button class="btn btn-danger" data-dismiss="modal">Đóng</button>
-                                    <button class="btn btn-success" type="submit">Lưu</button>
-                                    </div>
-                                </form>
-                            </div>
+                                        <div class="modal-body">
+                                            <div class="custom-file">
+                                                <input type="file" id="customerAvt" name="customerAvt"
+                                                    onchange="readURL(this);">
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button class="btn btn-danger" data-dismiss="modal">Đóng</button>
+                                            <button class="btn btn-success" type="submit">Lưu</button>
+                                        </div>
+                                    </form>
+                                </div>
                             </div>
                         </div>
                     </div>
                     <br>
-                    
+
                     <!-- List actions -->
                     <div class="list-group">
                         <span class="list-group-item list-group-item-action active">Quản lý tài khoản</span>
                         <a href="#" class="list-group-item list-group-item-action">Thông tin cá nhân</a>
                         <a href="#" class="list-group-item list-group-item-action">Đơn hàng gần đây</a>
-                        </div>
-                        
-                
-                </div><!--/col-3-->
+                    </div>
+
+
+                </div>
+                <!--/col-3-->
 
                 <div class="col-sm-9">
-                    <form action="/users/edit" method="POST" enctype="multipart/form-data">                                    
-                    <div class="row">
-                        <div class="form-row col-12 h-100">
-                            <div class="form-row col-12">
-                                <div class="form-group col-6">
-                                    <label for="name">Họ tên:</label>
-                                    <input type="text" class="form-control" placeholder="" id="name" name="name" value={{foundAcc.name}}>
+                    <form action="/users/edit" method="POST" enctype="multipart/form-data">
+                        <div class="row">
+                            <div class="form-row col-12 h-100">
+                                <div class="form-row col-12">
+                                    <div class="form-group col-6">
+                                        <label for="name">Họ tên:</label>
+                                        <input type="text" class="form-control" placeholder="" id="name" name="name"
+                                            value={{foundAcc.name}}>
+                                    </div>
+                                </div>
+                                <div class="form-row col-12">
+                                    <div class="form-group col-lg-4">
+                                        <label for="DoB">Ngày sinh:</label>
+                                        <input type="date" class="form-control" placeholder="" id="DoB" name="DoB"
+                                            value="">
+                                    </div>
+                                </div>
+                                <div class="form-row col-12">
+                                    <div class="form-group col-lg-12">
+                                        <label for="address">Địa chỉ:</label>
+                                        <input type="text" class="form-control" placeholder="" id="address"
+                                            name="address" value={{foundAcc.address}}>
+                                    </div>
+                                </div>
+                                <div class="form-row col-12">
+                                    <div class="form-group col-lg-4">
+                                        <label for="phone">Số điện thoại:</label>
+                                        <input type="text" class="form-control" placeholder="" id="phone" name="phone"
+                                            value={{foundAcc.phone}}>
+                                    </div>
+                                    <div class="form-group col-lg-8">
+                                        <label for="email">Email:</label>
+                                        <input type="email" class="form-control" placeholder="" id="email" name="email"
+                                            value={{foundAcc.email}}>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="form-row col-12">
-                                <div class="form-group col-lg-4">
-                                    <label for="DoB">Ngày sinh:</label>
-                                    <input type="date" class="form-control" placeholder="" id="DoB" name="DoB" value="">
-                                </div>
-                            </div>
-                            <div class="form-row col-12">
-                                <div class="form-group col-lg-12">
-                                    <label for="address">Địa chỉ:</label>
-                                    <input type="text" class="form-control" placeholder="" id="address" name="address" value={{foundAcc.address}}>
-                                </div>
-                            </div>
-                            <div class="form-row col-12">
-                                <div class="form-group col-lg-4">
-                                    <label for="phone">Số điện thoại:</label>
-                                    <input type="text" class="form-control" placeholder="" id="phone" name="phone" value={{foundAcc.phone}}>
-                                </div>
-                                <div class="form-group col-lg-8">
-                                    <label for="email">Email:</label>
-                                    <input type="email" class="form-control" placeholder="" id="email" name="email" value={{foundAcc.email}}>
-                                </div>
-                            </div>
-                        </div>  
-                    </div>
-                    <div class="form-group">
-                        <button type="submit" class="btn btn-primary mr-2" >Cập nhật</button>
-                        <a class="btn btn-danger" href="#">Hủy</a>
-                    </div>      
-                </form>
-                </div><!--/col-9-->
-            </div><!--/row-->
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-primary mr-2">Cập nhật</button>
+                            <a class="btn btn-danger" href="#">Hủy</a>
+                        </div>
+                    </form>
+                </div>
+                <!--/col-9-->
+            </div>
+            <!--/row-->
         </div>
     </div>
 </div>
+{{else}}
+<style type="text/css">
+    * {
+        box-sizing: border-box;
+        margin: 0px;
+        padding: 0px;
+    }
+
+    body {
+        font-family: sans-serif;
+    }
+
+    .container {}
+
+    .content {
+        margin: 200px 0px;
+        text-align: center;
+    }
+
+    h2 {
+        font-size: 200px;
+    }
+
+    p {
+        font-size: 40px;
+    }
+</style>
+<div id="container">
+    <div class="content">
+        <h2>404</h2>
+        <p>PAGE NOT FOUND</p>
+    </div>
+</div>
+{{/if}}

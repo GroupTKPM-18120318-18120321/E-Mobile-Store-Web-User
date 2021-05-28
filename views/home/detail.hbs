@@ -1,100 +1,393 @@
+{{#section 'cssDetail'}}
+<link href="/css/menu.css" rel="stylesheet" type="text/css" media="all" />
+{{/section}}
+{{#section 'jsDetail'}}
+<script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+<script type="text/javascript" src="/js/comment/handle.js"></script>
+{{/section}}
 <div class="banner-bootom-w3-agileits py-5">
-		<div class="container py-xl-4 py-lg-2">
-			<!-- tittle heading -->
-			<h3 class="tittle-w3l text-center mb-lg-5 mb-sm-4 mb-3">
-				<span>S</span>ingle
-				<span>P</span>age</h3>
-			<!-- //tittle heading -->
-			<div class="row">
-				<div class="col-lg-5 col-md-8 single-right-left ">
-					<div class="grid images_3_of_2">
-						<div class="flexslider">
-							<ul class="slides">
-								<li data-thumb="{{detail.cover}}">
-									<div class="thumb-image">
-										<img src="{{detail.cover}}" data-imagezoom="true" class="img-fluid" alt=""> </div>
-								{{!-- </li>
-								<li data-thumb="{{detail.cover}}">
-									<div class="thumb-image">
-										<img src="{{detail.cover}}" data-imagezoom="true" class="img-fluid" alt=""> </div>
-								</li>
-								<li data-thumb="{{detail.cover}}">
-									<div class="thumb-image">
-										<img src="{{detail.cover}}" data-imagezoom="true" class="img-fluid" alt=""> </div>
-								</li> --}}
-							</ul>
-							<div class="clearfix"></div>
-						</div>
+	<div class="container py-xl-4 py-lg-2">
+		<!-- tittle heading -->
+		<h3 class="tittle-w3l text-center mb-lg-5 mb-sm-4 mb-3">
+			<span>S</span>ingle
+			<span>P</span>age
+		</h3>
+		<!-- //tittle heading -->
+		<div class="row  mb-5">
+			<div class="col-lg-5 col-md-8 single-right-left ">
+				<div class="grid images_3_of_2">
+					<div class="flexslider">
+						<ul class="slides">
+							<li data-thumb="{{detail.cover}}">
+								<div class="thumb-image">
+									<img src="{{detail.cover}}" data-imagezoom="true" class="img-fluid" alt="">
+								</div>
+							</li>
+						
+						</ul>
+						<div class="clearfix"></div>
 					</div>
 				</div>
+			</div>
 
-				<div class="col-lg-7 single-right-left simpleCart_shelfItem">
-					<h3 class="mb-3">{{detail.name}}</h3>
-					<p class="mb-3">
-						<span class="item_price">{{detail.baseprice}}</span>
-						<del class="mx-2 font-weight-light">{{detail.discountprice}}</del>
-						<label>Free delivery</label>
+			<div class="col-lg-7 single-right-left simpleCart_shelfItem">
+				<h3 class="mb-3">{{detail.name}}</h3>
+				<p class="mb-3">
+					<span class="item_price"><b>{{detail.fdiscountprice}}đ</b></span>
+					<del class="mx-2 font-weight-light">{{detail.fbaseprice}}đ</del>
+					<label class="text-primary">Free delivery</label>
+				</p>
+				<div class="single-infoagile">
+					<ul>
+						<li class="mb-3">
+							Cash on Delivery Eligible.
+						</li>
+						<li class="mb-3">
+							Shipping Speed to Delivery.
+						</li>
+						<li class="mb-3">
+							EMIs from $655/month.
+						</li>
+						<li class="mb-3">
+							Bank OfferExtra 5% off with Axis Bank Buzz Credit CardT&C
+						</li>
+					</ul>
+				</div>
+				<div class="product-single-w3l">
+
+					<table class="text-dark table table-striped">
+						<thead>
+							<tr class="h4">
+								<td colspan="3">Thông số kỹ thuật</td>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>Màn hình: </td>
+								<td class="pl-5">{{detail.screen}}</td>
+							</tr>
+							<tr>
+								<td>Camera: </td>
+								<td class="pl-5">{{detail.camera}}</td>
+							</tr>
+							<tr>
+								<td>Bộ nhớ: </td>
+								<td class="pl-5">{{detail.storage}}</td>
+							</tr>
+							<tr>
+								<td>CPU: </td>
+								<td class="pl-5">{{detail.processor}}</td>
+							</tr>
+							<tr>
+								<td>Dung lượng: </td>
+								<td class="pl-5">{{detail.battery}}</td>
+							</tr>
+						</tbody>
+					</table>
+					<p class="my-3">
+						<i class="far fa-hand-point-right mr-2"></i>
+						<label>1 Year </label>Manufacturer Warranty
 					</p>
-					<div class="single-infoagile">
-						<ul>
-							<li class="mb-3">
-								Cash on Delivery Eligible.
-							</li>
-							<li class="mb-3">
-								Shipping Speed to Delivery.
-							</li>
-							<li class="mb-3">
-								EMIs from $655/month.
-							</li>
-							<li class="mb-3">
-								Bank OfferExtra 5% off* with Axis Bank Buzz Credit CardT&C
-							</li>
-						</ul>
-					</div>
-					<div class="product-single-w3l">
-						<p class="my-3">
-							<i class="far fa-hand-point-right mr-2"></i>
-							<label>1 Year</label>Manufacturer Warranty</p>
-						<ul>
-							<li class="mb-1">
-								{{detail.storage}}
-							</li>
-							<li class="mb-1">
-								{{detail.screen}}
-							</li>
-							<li class="mb-1">
-								{{detail.camera}}
-							</li>
-							<li class="mb-1">
-								{{detail.battery}}
-							</li>
-							<li class="mb-1">
-								{{detail.processor}}
-							</li>
-						</ul>
-						<p class="my-sm-4 my-3">
-							<i class="fas fa-retweet mr-3"></i>Net banking & Credit/ Debit/ ATM card
-						</p>
-					</div>
-					<div class="occasion-cart">
-						<div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out">
-							<form action="#" method="post">
-								<fieldset>
-									<input type="hidden" name="cmd" value="_cart" />
-									<input type="hidden" name="add" value="1" />
-									<input type="hidden" name="business" value=" " />
-									<input type="hidden" name="item_name" value="Samsung Galaxy J7 Prime" />
-									<input type="hidden" name="amount" value="200.00" />
-									<input type="hidden" name="discount_amount" value="1.00" />
-									<input type="hidden" name="currency_code" value="USD" />
-									<input type="hidden" name="return" value=" " />
-									<input type="hidden" name="cancel_return" value=" " />
-									<input type="submit" name="submit" value="Add to cart" class="button" />
-								</fieldset>
-							</form>
-						</div>
+					<p class="my-sm-4 my-3">
+						<i class="fas fa-retweet mr-3"></i>Net banking & Credit/ Debit/ ATM card
+					</p>
+				</div>
+				<div class="occasion-cart">
+					<div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out">
+						<form action="#" method="post">
+							<fieldset>
+								<input type="hidden" name="cmd" value="_cart" />
+								<input type="hidden" name="add" value="1" />
+								<input type="hidden" name="business" value=" " />
+								<input type="hidden" name="item_name" value="Samsung Galaxy J7 Prime" />
+								<input type="hidden" name="amount" value="200.00" />
+								<input type="hidden" name="discount_amount" value="1.00" />
+								<input type="hidden" name="currency_code" value="USD" />
+								<input type="hidden" name="return" value=" " />
+								<input type="hidden" name="cancel_return" value=" " />
+								<input type="submit" name="submit" value="Add to cart" class="button" />
+							</fieldset>
+						</form>
 					</div>
 				</div>
 			</div>
 		</div>
+		<hr>
+
+		{{!-- //Comment --}}
+		<div class="container mt-5 mb-5" id="Comment">
+			<div class="d-flex justify-content-left row">
+				<div class="d-flex flex-column col-md-8">
+					<div class="coment-bottom bg-white p-2 px-4">
+						<div class="d-flex flex-row add-comment-section mt-4 mb-4">
+							<img class="img-fluid img-responsive rounded-circle mr-2"
+								src="https://i.imgur.com/KLeobJk.jpg" width="38">
+
+							<input type="text" class="form-control mr-3" id="inpTxtComment" name="inpTxtComment"
+								placeholder="Add comment">
+							<button class="btn btn-primary" type="button" onclick="postComment()" >Comment</button>
+						</div>
+						<div class="collapsable-comment">
+							<div class="d-flex flex-row justify-content-between align-items-center action-collapse py-2"
+								data-toggle="collapse" aria-expanded="false" aria-controls="collapse-1"
+								href="#collapse-1">
+								<span>Comments</span>
+								<i class="fa fa-chevron-down" style="cursor:pointer"></i>
+							</div>
+
+							<div id="collapse-1" class="collapse">
+
+								{{#each listComment}}
+								<div class="commented-section mt-2">
+									<div class="d-flex flex-row align-items-center commented-user">
+										<img class="img-fluid img-responsive rounded-circle mr-2" src="{{avatar}}"
+											width="38">
+										<h5 class="mb-1 mr-2">{{nameCustomer}}</h5>
+
+										{{!-- <span class="ml-2">4 hours ago</span> --}}
+										<span class="ml-2 text-secondary">{{time}}</span>
+									</div>
+									<div class="ml-5 comment-text-sm"><span>{{content}}</span></div>
+								</div>
+								<div class="ml-5 reply-section">
+									<div class="d-flex flex-row align-items-center voting-icons">
+										<div class="my-2 collapsable-comment">
+
+											{{!-- Phản hồi --}}
+											<div data-toggle="collapse" aria-expanded="false"
+												aria-controls="child{{_id}}" href="#child{{_id}}">
+												<span class="text-primary" style="cursor:pointer">
+													<i class="fa fa-reply mr-2" aria-hidden="true "></i>Phản hồi</span>
+											</div>
+											<div id="child{{_id}}" class="collapse">
+												<div class="d-flex flex-row add-comment-section my-2">
+													<img class="img-fluid img-responsive rounded-circle mr-2"
+														src="https://i.imgur.com/KLeobJk.jpg" width="38">
+
+													<input type="text" class="form-control mr-3" id="inpTxtChild{{_id}}"
+														name="inpTxtChildComment" placeholder="Add comment">
+
+													<button class="btn btn-primary" type="button"
+														onclick="postChildComment('{{_id}}')" >Comment</button>
+												</div>
+											</div>
+											{{!-- //Phản hồi --}}
+
+											{{!-- Xem thêm --}}
+											<div data-toggle="collapse" aria-expanded="false" aria-controls="{{_id}}"
+												href="#{{_id}}">
+												<span class="text-primary" style="cursor:pointer" onclick="loadChildComment('{{_id}}')">
+													<i class="fa fa-chevron-down mr-2" aria-hidden="true"></i>Xem
+													thêm</span>
+											</div>
+
+											<div id="{{_id}}" class="collapse">
+												
+											</div>
+											{{!-- Xem thêm --}}
+
+										</div>
+									</div>
+								</div>
+								{{/each}}
+
+								{{!-- pagination --}}
+								{{#if isPagination}}
+								<div class="mt-4">
+									<nav aria-label="...">
+										<ul class="pagination"> 
+
+											<li class="page-item {{#unless canGoPrev}}disabled{{/unless}}">
+												<a class="page-link" onclick="getPageComment({{prevPage}})" >
+													<i class="fas fa-angle-double-left"></i>
+												</a>
+
+											</li>
+
+											{{#each pageItem}}
+											{{#if isActive}}
+											<li class="page-item active">
+												<span class="page-link">
+													{{value}}
+													<span class="sr-only">(current)</span>
+												</span>
+											</li>
+											{{else}}
+											<li class="page-item"><a class="page-link"
+													onclick="getPageComment({{value}})" >{{value}}</a>
+											</li>
+											{{/if}}
+											{{/each}}
+
+
+											<li class="page-item {{#unless canGoNext}}disabled{{/unless}}">
+												<a class="page-link" onclick="getPageComment({{nextPage}})" >
+													<i class="fas fa-angle-double-right"></i>
+												</a>
+											</li>
+
+										</ul>
+									</nav>
+
+								</div>
+								{{/if}}
+								{{!-- //pagination --}}
+
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+		{{!-- //End Comment --}}
+
+		<hr>
+		{{!-- Sản phẩm tương tự --}}
+		<div class="text-center">
+			<div class="col-lg-12 my-3">
+				<h3>Sản phẩm tương tự</h3>
+			</div>
+			{{!-- --}}
+			<div class="row">
+				{{#each similarProduct}}
+				<div class="card col-lg-3 col-md-12 p-4 my-2 bg-light border-0">
+					<img class="card-img-top img-fluid" src="{{cover}}" alt="">
+					<div class="card-body">
+						<h5 class="card-title">{{name}}</h5>
+						<span class="item_price"><b>{{fdiscountprice}}đ</b></span>
+						<del class="mx-2 font-weight-light">{{fbaseprice}}đ</del<br>
+					</div>
+					<div class="card-footer bg-light">
+						<button class="btn btn-primary my-2">
+							<a class="text-white" href="/mobilephonesbrands/detail/{{_id}}">Xem ngay</a>
+						</button>
+					</div>
+				</div>
+				{{/each}}
+			</div>
+		</div>
 	</div>
+
+</div>
+
+<script type="text/x-handlebars-template" id="templateChildComment">
+	\{{#each listChildComment}}
+		<div class="commented-section mt-2">
+		<div class="d-flex flex-row align-items-center commented-user">
+			<img class="img-fluid img-responsive rounded-circle mr-2"
+				src="\{{this.avatar}}" width="38">
+			<h5 class="mb-1 mr-2">\{{this.nameCustomer}}</h5>
+			<span class="ml-2 text-secondary">\{{this.time}}</span>
+		</div>
+		<div class="ml-5 comment-text-sm">
+			<span>\{{this.content}}</span>
+		</div>
+	</div>
+	\{{/each}}
+	
+</script>
+<script type="text/x-handlebars-template" id="templateComment">
+	\{{#each listComment}}
+	<div class="commented-section mt-2">
+		<div class="d-flex flex-row align-items-center commented-user">
+			<img class="img-fluid img-responsive rounded-circle mr-2" src="\{{avatar}}"
+				width="38">
+			<h5 class="mb-1 mr-2">\{{nameCustomer}}</h5>
+
+			{{!-- <span class="ml-2">4 hours ago</span> --}}
+			<span class="ml-2 text-secondary">\{{time}}</span>
+		</div>
+		<div class="ml-5 comment-text-sm"><span>\{{content}}</span></div>
+	</div>
+	<div class="ml-5 reply-section">
+		<div class="d-flex flex-row align-items-center voting-icons">
+			<div class="my-2 collapsable-comment">
+				{{!-- Phản hồi --}}
+				<div data-toggle="collapse" aria-expanded="false" aria-controls="child\{{_id}}"
+					href="#child\{{_id}}">
+					<span class="text-primary" style="cursor:pointer">
+						<i class="fa fa-reply mr-2" aria-hidden="true "></i>Phản hồi</span>
+				</div>
+				<div id="child\{{_id}}" class="collapse">
+					<div class="d-flex flex-row add-comment-section my-2">
+						<img class="img-fluid img-responsive rounded-circle mr-2"
+							src="https://i.imgur.com/KLeobJk.jpg" width="38">
+
+						<input type="text" class="form-control mr-3" id="inpTxtChild\{{_id}}"
+							name="inpTxtChildComment" placeholder="Add comment">
+				
+						<button class="btn btn-primary" type="button"
+							onclick="postChildComment('\{{_id}}')" >Comment</button>
+					</div>
+				</div>
+				{{!-- //Phản hồi --}}
+
+				{{!-- Xem thêm --}}
+				<div data-toggle="collapse" aria-expanded="false" aria-controls="\{{_id}}"
+					href="#\{{_id}}">
+					<span class="text-primary" style="cursor:pointer" onclick="loadChildComment('\{{_id}}')">
+						<i class="fa fa-chevron-down mr-2" aria-hidden="true"></i>Xem thêm</span>
+				</div>
+				<div id="\{{_id}}" class="collapse">
+					<div class="commented-section mt-2">
+						<div class="d-flex flex-row align-items-center commented-user">
+							<img class="img-fluid img-responsive rounded-circle mr-2"
+								src="https://i.imgur.com/KLeobJk.jpg" width="38">
+							<h5 class="mb-1 mr-2">Corey oates</h5><span
+								class="dot"></span><span class="ml-2">4 hours ago</span>
+						</div>
+						<div class="ml-5 comment-text-sm">
+							<span>Lorem ipsum dolor sit amet.</span>
+						</div>
+					</div>
+				</div>
+				{{!-- Xem thêm --}}
+			</div>
+		</div>
+	</div>
+	\{{/each}}
+
+	{{!-- pagination --}}
+	\{{#if isPagination}}
+	<div class="mt-4">
+		<nav aria-label="...">
+			<ul class="pagination">
+
+				<li class="page-item \{{#unless canGoPrev}}disabled\{{/unless}}">
+					<a class="page-link" onclick="getPageComment(\{{prevPage}})" >
+						<i class="fas fa-angle-double-left"></i>
+					</a>
+
+				</li>
+
+				\{{#each pageItem}}
+				\{{#if isActive}}
+				<li class="page-item active">
+					<span class="page-link">
+						\{{value}}
+						<span class="sr-only">(current)</span>
+					</span>
+				</li>
+				\{{else}}
+				<li class="page-item"><a class="page-link"
+						onclick="getPageComment(\{{value}})" >\{{value}}</a>
+				</li>
+				\{{/if}}
+				\{{/each}}
+
+
+				<li class="page-item \{{#unless canGoNext}}disabled\{{/unless}}">
+					<a class="page-link" onclick="getPageComment(\{{nextPage}})" > 
+						<i class="fas fa-angle-double-right"></i>
+					</a>
+				</li>
+
+			</ul>
+		</nav>
+
+	</div>
+			
+	\{{/if}}
+	{{!-- //pagination --}}		
+</script>

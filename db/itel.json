@@ -1,0 +1,74 @@
+[
+    {
+        "name": "Itel it9200",
+        "baseprice": "$1950",
+        "discountprice": "$1900",
+        "cover": "https://cdn.tgdd.vn/Products/Images/42/232657/itel-it9200-den-600x600-600x600.jpg",
+        "idmanufacturer": "7",
+        "battery": "1900 mAh",
+        "camera": "0.3 MP",
+        "processor": "None",
+        "screen": "TFT LCD, 2.4inch, 262.000 màu",
+        "storage": "None"
+    },
+    {
+        "name": "Itel it6131",
+        "baseprice": "$1950",
+        "discountprice": "$1900",
+        "cover": "https://cdn.tgdd.vn/Products/Images/42/228570/itel-it6131-xanh-duong-new-600x600-600x600.jpg",
+        "idmanufacturer": "7",
+        "battery": "1200 mAh",
+        "camera": "0.3 MP",
+        "processor": "None",
+        "screen": "TFT LCD, 2.4inch, 65.536 màu",
+        "storage": "None"
+    },
+    {
+        "name": "Itel it5092",
+        "baseprice": "$1950",
+        "discountprice": "$1900",
+        "cover": "https://cdn.tgdd.vn/Products/Images/42/210659/itel-it5092-gold-1-600x600.jpg",
+        "idmanufacturer": "7",
+        "battery": "3000 mAh",
+        "camera": "0.3 MP",
+        "processor": "None",
+        "screen": "2.4inch, 65.536 màu",
+        "storage": "None"
+    },
+    {
+        "name": "Itel it6120",
+        "baseprice": "$1950",
+        "discountprice": "$1900",
+        "cover": "https://cdn.tgdd.vn/Products/Images/42/200045/itel-it6120-vang-new-600x600-600x600.jpg",
+        "idmanufacturer": "7",
+        "battery": "1200 mAh",
+        "camera": "0.3 MP",
+        "processor": "None",
+        "screen": "TFT LCD, 2.4inch, 65.536 màu",
+        "storage": "None"
+    },
+    {
+        "name": "Itel S15 Pro",
+        "baseprice": "$1950",
+        "discountprice": "$1900",
+        "cover": "https://cdn.tgdd.vn/Products/Images/42/210476/itel-s15-pro-tim-600x600.jpg",
+        "idmanufacturer": "7",
+        "battery": "3000 mAh",
+        "camera": "Chính 8 MP & Phụ VGA, VGA",
+        "processor": "CPU 8 nhân",
+        "screen": "IPS LCD, 6.1inch, HD+",
+        "storage": "2GB/32GB"
+    },
+    {
+        "name": "Itel Alpha Lite",
+        "baseprice": "$1950",
+        "discountprice": "$1900",
+        "cover": "https://cdn.tgdd.vn/Products/Images/42/206083/itel-alpha-lite-black-1-600x600.jpg",
+        "idmanufacturer": "7",
+        "battery": "2050 mAh",
+        "camera": "Chính 8 MP & Phụ VGA, VGA",
+        "processor": "Spreadtrum SC7731E 4 nhân",
+        "screen": "TFT LCD, 5inch, FWVGA",
+        "storage": "1GB/8GB"
+    }
+]

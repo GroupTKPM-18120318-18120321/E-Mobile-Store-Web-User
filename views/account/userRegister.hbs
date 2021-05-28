@@ -7,13 +7,11 @@
 {{#section 'js'}}
 <!-- password-script -->
 <script>
-    window.onload = function () {
+      /*window.onload = function () {
         document.getElementById("password").onchange = validatePassword;
         document.getElementById("confirm_password").onchange = validatePassword;
         document.getElementById("email").onchange = validatePassword;
-    }
-
-
+    }*/
     function kiemtraEmailHopLe() {
         var email = document.getElementById("email");
         var filter = /^([\w\.])+@([a-zA-Z0-9\-])+\.([a-zA-Z]{2,4})(\.[a-zA-Z]{2,4})?$/;
@@ -25,18 +23,36 @@
         }
     }
 
+    function kiemtraMatKhauHopLe() {
+        var pass = document.getElementById("password");
+        var filter = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/;
+        if (!filter.test(pass.value)) {
+            return false;
+        }
+        else {
+            return true;
+        }
+    }
+
     function validatePassword(event) {
         console.log("EMAIL");
         var isCorrectEmail = kiemtraEmailHopLe();
+        var isCorretPass = kiemtraMatKhauHopLe();
         var pass2 = document.getElementById("confirm_password").value;
         var pass1 = document.getElementById("password").value;
         if (isCorrectEmail == false) {
             event.preventDefault();
             document.getElementById("warning_email").style.display = "block";
         }
-        else
-        {
+        else {
             document.getElementById("warning_email").style.display = "none";
+        }
+        if (isCorretPass == false) {
+            event.preventDefault();
+            document.getElementById("warning_pass").style.display = "block";
+        }
+        else {
+            document.getElementById("warning_pass").style.display = "none";
         }
         if (pass1 != pass2) {
             event.preventDefault();
@@ -55,78 +71,132 @@
 
 
 
-
-<div class="modal-dialog" role="document">
-    <div class="modal-content">
-
-        <div class="border-bottom">
-            <div class="form-group" style="margin-left: 30px;">
-                <div class="row">
-                    <h5 class="modal-title">Register</h5>
-                </div>
-                <div class="row">
-                    {{#if isFailUser}}
-                    <h5 class="text-danger"><i class="fa fa-warning"></i> Tên đăng nhập đã tồn tại</h5>
-                    {{/if}}
-                </div>
-               <div class="row">
-                    {{#if isFailEmail}}
-                    <h5 class="text-danger"><i class="fa fa-warning"></i> Email đã được sử dụng cho tài khoản khác</h5>
-                    {{/if}}
-                </div>
-                 <div class="row">
-                    {{#if notExistEmail}}
-                    <h5 class="text-danger"><i class="fa fa-warning"></i> Email không tồn tại</h5>
-                    {{/if}}
-                </div>
-                <div class="row" style="display: none" id="warning_password">
-                    <h5 class="text-danger"><i class="fa fa-warning"></i> Mật khẩu không trùng nhau</h5>
-                </div>
-                <div class="row" style="display: none" id="warning_email">
-                    <h5 class="text-danger"><i class="fa fa-warning"></i> Email không chính xác</h5>
-                </div>
-                {{!-- <div class="row" style="display: none" id="warning_email">
-                    <h5 class="text-danger"><i class="fa fa-warning"></i> Email nhập không đúng</h5>
-                </div> --}}
+<div class="p-3 mb-2 bg-primary text-white">
+    <div class="row">
+        <div class="col-lg-7 d-flex align-items-center">
+            <div class="col-lg-12 logo_agile">
+                <h1 class="text-center align-middle">
+                    <a href="/" class="text-white font-weight-bold font-italic">
+                        <img src="/images/logo2.png" alt=" " class="img-fluid">
+                        <br>Mobile Store
+                    </a>
+                </h1><br>
+                <h3 class="text-center align-middle">
+                    Nền tảng thương mại điện tử hàng đầu Việt Nam
+                </h3>
             </div>
         </div>
+        <div class="col-lg-4 modal-dialog" role="document">
+            <div class="modal-content">
 
-        <div class="modal-body">
-            <form action="/users/register" method="post" onsubmit="return validatePassword(event)">
-                <div class="form-group">
-                    <label class="col-form-label">Your Name</label>
-                    <input type="text" class="form-control" placeholder=" " name="Name" required="" value={{name}}>
-                </div>
-
-
-                <div class="form-group">
-                    <label class="col-form-label">Email</label>
-                    <input type="text" class="form-control" placeholder=" " name="Email" required="" id="email"
-                        value={{email}}>
-                </div>
-
-
-                <div class="form-group">
-                    <label class="col-form-label">Password</label>
-                    <input type="password" class="form-control" placeholder=" " name="Password" id="password"
-                        required="" value={{password}}>
-                </div>
-                <div class="form-group">
-                    <label class="col-form-label">Confirm Password</label>
-                    <input type="password" class="form-control" placeholder=" " name="Confirm Password"
-                        id="confirm_password" required="" value={{password}}>
-                </div>
-                <div class="right-w3l">
-                    <input type="submit" class="form-control" value="Register">
-                </div>
-                <div class="sub-w3l">
-                    <div class="custom-control custom-checkbox mr-sm-2">
-                        <input type="checkbox" class="custom-control-input" id="customControlAutosizing2">
-                        <label class="custom-control-label" for="customControlAutosizing2">I Accept to the Terms &
-                            Conditions</label>
+                <div class="border-bottom">
+                    <div class="form-group" style="margin-left: 30px;">
+                        <div class="row">
+                            <h5 class="modal-title">ĐĂNG KÝ</h5>
+                        </div>
+                        <div class="row">
+                            {{#if isFailUser}}
+                            <h5 class="text-danger"><i class="fa fa-warning"></i> Tên đăng nhập đã tồn tại</h5>
+                            {{/if}}
+                        </div>
+                        <div class="row">
+                            {{#if isFailEmail}}
+                            <h5 class="text-danger"><i class="fa fa-warning"></i> Email đã được sử dụng cho tài khoản
+                                khác</h5>
+                            {{/if}}
+                        </div>
+                        <div class="row">
+                            {{#if notExistEmail}}
+                            <h5 class="text-danger"><i class="fa fa-warning"></i> Email không tồn tại</h5>
+                            {{/if}}
+                        </div>
+                        <div class="row" style="display: none" id="warning_password">
+                            <h5 class="text-danger"><i class="fa fa-warning"></i> Mật khẩu không trùng nhau</h5>
+                        </div>
+                        <div class="row" style="display: none" id="warning_email">
+                            <h5 class="text-danger"><i class="fa fa-warning"></i> Email không chính xác</h5>
+                        </div>
+                        <div class="row" style="display: none" id="warning_pass">
+                            <h5 class="text-danger"><i class="fa fa-warning"></i> Mật khẩu tối thiểu tám ký tự, ít nhất
+                                <br>một chữ cái, một số và một ký tự đặc biệt</h5>
+                        </div>
+                        {{!-- <div class="row" style="display: none" id="warning_email">
+                            <h5 class="text-danger"><i class="fa fa-warning"></i> Email nhập không đúng</h5>
+                        </div> --}}
                     </div>
                 </div>
-            </form>
+
+                <div class="modal-body">
+                    <form action="/users/register" method="post" onsubmit="return validatePassword(event)">
+                        <div class="form-group">
+                            <label class="col-form-label">Họ tên</label>
+                            <input type="text" class="form-control" placeholder=" " name="username" required=""
+                                value={{username}}>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-form-label">Tên đăng nhập</label>
+                            <input type="text" class="form-control" placeholder=" " name="Name" required=""
+                                value={{name}}>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-form-label">Email</label>
+                            <input type="text" class="form-control" placeholder=" " name="Email" required="" id="email"
+                                value={{email}}>
+                        </div>
+
+
+                        <div class="form-group">
+                            <label class="col-form-label">Mật khẩu</label>
+                            <input type="password" class="form-control" placeholder=" " name="Password" id="password"
+                                required="" value={{password}}>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-form-label">Xác nhận mật khẩu</label>
+                            <input type="password" class="form-control" placeholder=" " name="Confirm Password"
+                                id="confirm_password" required="" value={{password}}>
+                        </div>
+                        <div class="right-w3l">
+                            <input type="submit" class="form-control" value="Đăng ký">
+                        </div>
+                        {{!-- <div class="modal-body">
+                            <form action="/users/register" method="post">
+                                <div class="form-group">
+                                    <label class="col-form-label">Your Name</label>
+                                    <input type="text" class="form-control" placeholder=" " name="Name" required="">
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-form-label">Email</label>
+                                    <input type="email" class="form-control" placeholder=" " name="Email" required="">
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-form-label">Password</label>
+                                    <input type="password" class="form-control" placeholder=" " name="Password"
+                                        id="password" required="">
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-form-label">Confirm Password</label>
+                                    <input type="password" class="form-control" placeholder=" " name="Confirm Password"
+                                        id="confirm_password" required="">
+                                </div>
+                                <div class="right-w3l">
+                                    <input type="submit" class="form-control" value="Register">
+                                </div>
+                                <div class="sub-w3l">
+                                    <div class="custom-control custom-checkbox mr-sm-2">
+                                        <input type="checkbox" class="custom-control-input"
+                                            id="customControlAutosizing2">
+                                        <label class="custom-control-label" for="customControlAutosizing2">I Accept to
+                                            the Terms
+                                            &
+                                            Conditions</label>
+                                    </div>
+                                </div>
+                            </form> --}}
+                        </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>

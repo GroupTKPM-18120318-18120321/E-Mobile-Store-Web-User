@@ -1,0 +1,111 @@
+[
+    {
+        "name": "Samsung Galaxy M51",
+        "baseprice": "$949",
+        "discountprice": "$890",
+        "cover": "https://cdn.tgdd.vn/Products/Images/42/217536/samsung-galaxy-m51-trang-new-600x600-600x600.jpg",
+        "idmanufacturer": "2",
+        "battery": "7000 mAh, có sạc nhanh",
+        "camera": "Chính 64 MP & Phụ 12 MP, 5 MP, 5 MP",
+        "processor": "Snapdragon 730 8 nhân",
+        "screen": "Super AMOLED Plus, 6.7inch, Full HD+",
+        "storage": "8GB/256GB"
+    },
+    {
+        "name": "Samsung Galaxy Z Fold2 5G",
+        "baseprice": "$5000",
+        "discountprice": "$4500",
+        "cover": "https://cdn.tgdd.vn/Products/Images/42/226099/samsung-galaxy-z-fold-2-vang-dong-600x600.jpg",
+        "idmanufacturer": "2",
+        "battery": "4500 mAh, có sạc nhanh",
+        "camera": "Chính 64 MP & Phụ 12 MP, 5 MP, 5 MP",
+        "processor": "Snapdragon 865+ 8 nhân",
+        "screen": "Dynamic AMOLED, Phụ: Super AMOLED, Chính 7.59inch & Phụ 6.23inch, Full HD+",
+        "storage": "12GB/256GB"
+    },
+    {
+        "name": "Samsung Galaxy Note 20 Ultra",
+        "baseprice": "$2999",
+        "discountprice": "$2599",
+        "cover": "https://cdn.tgdd.vn/Products/Images/42/220522/samsung-galaxy-note-20-ultra-vangdong-600x600-600x600.jpg",
+        "idmanufacturer": "2",
+        "battery": "4500 mAh, có sạc nhanh",
+        "camera": "Chính 108 MP & Phụ 12 MP, 12 MP, cảm biến Laser AF",
+        "processor": "Exynos 990 8 nhân",
+        "screen": "Dynamic AMOLED 2X, 6.9inch, Quad HD+ (2K+)",
+        "storage": "8GB/256GB"
+    },
+    {
+        "name": "Samsung Galaxy Z Flip",
+        "baseprice": "$3600",
+        "discountprice": "$3400",
+        "cover": "https://cdn.tgdd.vn/Products/Images/42/213022/samsung-galaxy-z-flip-600x600-1-600x600.jpg",
+        "idmanufacturer": "2",
+        "battery": "3300 mAh, có sạc nhanh",
+        "camera": "2 camera 12 MP",
+        "processor": "Snapdragon 855+ 8 nhân",
+        "screen": "Chính: Dynamic AMOLED, Phụ: Super AMOLED, 6.7inch, Quad HD (2K)",
+        "storage": "8GB/256GB"
+    },
+    {
+        "name": "Samsung Galaxy S20+",
+        "baseprice": "$2190",
+        "discountprice": "$2000",
+        "cover": "https://cdn.tgdd.vn/Products/Images/42/217936/samsung-galaxy-s20-plus-xanh-600x600-600x600.jpg",
+        "idmanufacturer": "2",
+        "battery": "4500 mAh, có sạc nhanh",
+        "camera": "Chính 12 MP & Phụ 64 MP, 12 MP, TOF 3D",
+        "processor": "Exynos 990 8 nhân",
+        "screen": "Dynamic AMOLED 2X, 6.7inch, Quad HD+ (2K+)",
+        "storage": "8GB/256GB"
+    },
+    {
+        "name": "Samsung Galaxy Note 10+",
+        "baseprice": "$1649",
+        "discountprice": "$1500",
+        "cover": "https://cdn.tgdd.vn/Products/Images/42/206176/samsung-galaxy-note-10-plus-silver-new-600x600.jpg",
+        "idmanufacturer": "2",
+        "battery": "4300 mAh, có sạc nhanh",
+        "camera": "Chính 12 MP & Phụ 12 MP, 16 MP, TOF 3D",
+        "processor": "Exynos 9825 8 nhân",
+        "screen": "Dynamic AMOLED, 6.8inch, Quad HD+ (2K+)",
+        "storage": "12GB/256GB"
+    },
+    {
+        "name": "Samsung Galaxy A71",
+        "baseprice": "$899",
+        "discountprice": "$850",
+        "cover": "https://cdn.tgdd.vn/Products/Images/42/210246/samsung-galaxy-a71-bac-inox-new-600x600-600x600.jpg",
+        "idmanufacturer": "2",
+        "battery": "4500 mAh, có sạc nhanh",
+        "camera": "Chính 64 MP & Phụ 12 MP, 5 MP, 5 MP",
+        "processor": "Snapdragon 730 8 nhân",
+        "screen": "Super AMOLED, 6.7inch, Full HD+",
+        "storage": "8GB/256GB"
+    },
+    {
+        "name": "Samsung Galaxy A50s",
+        "baseprice": "$550",
+        "discountprice": "$500",
+        "cover": "https://cdn.tgdd.vn/Products/Images/42/207641/samsung-galaxy-a50s-xanh-600x600.jpg",
+        "idmanufacturer": "2",
+        "battery": "4000 mAh, có sạc nhanh",
+        "camera": "Chính 48 MP & Phụ 8 MP, 5 MPP",
+        "processor": "Exynos 9610 8 nhân",
+        "screen": "Super AMOLED, 6.4inch, Full HD+",
+        "storage": "4GB/64GB"
+    },
+    {
+        "name": "Samsung Galaxy S20",
+        "baseprice": "$1950",
+        "discountprice": "$1900",
+        "cover": "https://cdn.tgdd.vn/Products/Images/42/217935/samsung-galaxy-s20-hong-600x600-600x600.jpg",
+        "idmanufacturer": "2",
+        "battery": "4000 mAh, có sạc nhanh",
+        "camera": "Chính 12 MP & Phụ 64 MP, 12 MP",
+        "processor": "Exynos 990 8 nhân",
+        "screen": "Dynamic AMOLED 2X, 6.2inch, Quad HD+ (2K+)",
+        "storage": "8GB/128GB"
+    }
+]
+

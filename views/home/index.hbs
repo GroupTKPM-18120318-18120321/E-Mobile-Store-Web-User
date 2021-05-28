@@ -20,21 +20,21 @@
 								<div class="col-md-4 product-men mt-5">
 									<div class="men-pro-item simpleCart_shelfItem">
 										<div class="men-thumb-item text-center">
-											<img src= {{this.cover}} alt="" width="200px" height="230px">
+											<img src= {{this.cover}} alt="" class="img-fluid">
 											<div class="men-cart-pro">
 												<div class="inner-men-cart-pro" >
-													<a href="/mobilephonesbrands/allmobiles/detail/{{_id}}" class="link-product-add-cart" >Quick View</a>
+													<a href="/mobilephonesbrands/detail/{{_id}}" class="link-product-add-cart" >Quick View</a>
 												</div>
 											</div>
 										</div>
 										<span class="product-new-top">New</span>
 										<div class="item-info-product text-center border-top mt-4">
 											<h4 class="pt-1">
-												<a href="/mobilephonesbrands/allmobiles/detail/{{_id}}"> {{this.name}} </a>
+												<a href="/mobilephonesbrands/detail/{{_id}}"> {{this.name}} </a>
 											</h4>
 											<div class="info-product-price my-2">
-												<span class="item_price">{{this.discountprice}}</span>
-												<del>{{this.baseprice}}</del>
+												<span class="item_price"><b>{{this.fdiscountprice}}đ</b></span>
+												<del>{{this.fbaseprice}}đ</del>
 											</div>
 											<div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out">
 												<form action="#" method="post">
@@ -42,9 +42,9 @@
 														<input type="hidden" name="cmd" value="_cart" />
 														<input type="hidden" name="add" value="1" />
 														<input type="hidden" name="business" value=" " />
-														<input type="hidden" name="item_name" value={{this.name}} />
-														<input type="hidden" name="npmamount" value={{this.discountprice}} />
-														<input type="hidden" name="discount_amount" value="1.00" />
+														<input type="hidden" name="item_name" value="{{this.name}}" />
+														<input type="hidden" name="amount" value="{{this.baseprice}}" />
+														<input type="hidden" name="discount_amount" value="{{this.discount}}" />
 														<input type="hidden" name="currency_code" value="USD" />
 														<input type="hidden" name="return" value=" " />
 														<input type="hidden" name="cancel_return" value=" " />
@@ -147,20 +147,20 @@
 								<div class="col-md-4 product-men mt-5">
 									<div class="men-pro-item simpleCart_shelfItem">
 										<div class="men-thumb-item text-center">
-											<img src={{this.cover}} alt="" width="200px" height="230px">
+											<img src={{this.cover}} alt="" class="img-fluid">
 											<div class="men-cart-pro">
 												<div class="inner-men-cart-pro">
-													<a href="/mobilephonesbrands/allmobiles/detail/{{_id}}" class="link-product-add-cart">Quick View</a>
+													<a href="/mobilephonesbrands/detail/{{_id}}" class="link-product-add-cart">Quick View</a>
 												</div>
 											</div>
 										</div>
 										<div class="item-info-product text-center border-top mt-4">
 											<h4 class="pt-1">
-												<a href="/mobilephonesbrands/allmobiles/detail/{{_id}}">{{this.name}}</a>
+												<a href="/mobilephonesbrands/detail/{{_id}}">{{this.name}}</a>
 											</h4>
 											<div class="info-product-price my-2">
-												<span class="item_price">{{this.baseprice}}</span>
-												<del>{{this.discountprice}}</del>
+												<span class="item_price"><b>{{this.fdiscountprice}}đ</b></span>
+												<del>{{this.fbaseprice}}đ</del>
 											</div>
 											<div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out">
 												<form action="#" method="post">
@@ -168,8 +168,8 @@
 														<input type="hidden" name="cmd" value="_cart" />
 														<input type="hidden" name="add" value="1" />
 														<input type="hidden" name="business" value=" " />
-														<input type="hidden" name="item_name" value={{this.name}} />
-														<input type="hidden" name="amount" value={{this.discountprice}} />
+														<input type="hidden" name="item_name" value="{{this.name}}" />
+														<input type="hidden" name="amount" value="{{this.baseprice}}" />
 														<input type="hidden" name="discount_amount" value="1.00" />
 														<input type="hidden" name="currency_code" value="USD" />
 														<input type="hidden" name="return" value=" " />
@@ -282,21 +282,21 @@
 								<div class="col-md-4 product-men mt-5">
 									<div class="men-pro-item simpleCart_shelfItem">
 										<div class="men-thumb-item text-center">
-											<img src= {{this.cover}} alt="" width="200px" height="230px">
+											<img src= {{this.cover}} alt="" class="img-fluid">
 											<div class="men-cart-pro">
 												<div class="inner-men-cart-pro">
-													<a href="/mobilephonesbrands/allmobiles/detail/{{_id}}" class="link-product-add-cart">Quick View</a>
+													<a href="/mobilephonesbrands/detail/{{_id}}" class="link-product-add-cart">Quick View</a>
 												</div>
 											</div>
 										</div>
 										<span class="product-new-top">New</span>
 										<div class="item-info-product text-center border-top mt-4">
 											<h4 class="pt-1">
-												<a href="/mobilephonesbrands/allmobiles/detail/{{_id}}">{{this.name}}</a>
+												<a href="/mobilephonesbrands/detail/{{_id}}">{{this.name}}</a>
 											</h4>
 											<div class="info-product-price my-2">
-												<span class="item_price">{{this.discountprice}}</span>
-												<del>{{this.baseprice}}</del>
+												<span class="item_price"><b>{{this.fdiscountprice}}đ</b></span>
+												<del>{{this.fbaseprice}}đ</del>
 											</div>
 											<div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out">
 												<form action="#" method="post">
@@ -304,8 +304,8 @@
 														<input type="hidden" name="cmd" value="_cart" />
 														<input type="hidden" name="add" value="1" />
 														<input type="hidden" name="business" value=" " />
-														<input type="hidden" name="item_name" value={{this.name}} />
-														<input type="hidden" name="amount" value={{this.discountprice}} />
+														<input type="hidden" name="item_name" value="{{this.name}}" />
+														<input type="hidden" name="amount" value="{{this.baseprice}}" />
 														<input type="hidden" name="discount_amount" value="1.00" />
 														<input type="hidden" name="currency_code" value="USD" />
 														<input type="hidden" name="return" value=" " />

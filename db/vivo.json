@@ -1,0 +1,86 @@
+[
+    {
+        "name": "Vivo V20",
+        "baseprice": "$1950",
+        "discountprice": "$1900",
+        "cover": "https://cdn.tgdd.vn/Products/Images/42/228453/TimerThumb/vivo-v20-(4).jpg",
+        "idmanufacturer": "6",
+        "battery": "4000 mAh, có sạc nhanh",
+        "camera": "Chính 64 MP & Phụ 8 MP, 2 MP",
+        "processor": "Snapdragon 720G 8 nhân",
+        "screen": "AMOLED, 6.44inch, Full HD+",
+        "storage": "8GB/128GB"
+    },
+    {
+        "name": "Vivo Y20s",
+        "baseprice": "$1950",
+        "discountprice": "$1900",
+        "cover": "https://cdn.tgdd.vn/Products/Images/42/228376/vivo-y20s-xanh-1-600x600.jpg",
+        "idmanufacturer": "6",
+        "battery": "5000 mAh, có sạc nhanh",
+        "camera": "Chính 13 MP & Phụ 2 MP, 2 MP",
+        "processor": "Snapdragon 460 8 nhân",
+        "screen": "IPS LCD, 6.51inch, HD+",
+        "storage": "6GB/128GB"
+    },
+    {
+        "name": "Vivo X50 Pro",
+        "baseprice": "$1950",
+        "discountprice": "$1900",
+        "cover": "https://cdn.tgdd.vn/Products/Images/42/223290/vivo-x50-pro-14-600x600.jpg",
+        "idmanufacturer": "6",
+        "battery": "4315 mAh, có sạc nhanh",
+        "camera": "Chính 48 MP & Phụ 13 MP, 8 MP, 8 MP",
+        "processor": "Snapdragon 765G 8 nhân",
+        "screen": "AMOLED, 6.56inch, Full HD+",
+        "storage": "6GB/128GB"
+    },
+    {
+        "name": "Vivo Y1s",
+        "baseprice": "$1950",
+        "discountprice": "$1900",
+        "cover": "https://cdn.tgdd.vn/Products/Images/42/225851/vivo-y1s-xanh-600x600.jpg",
+        "idmanufacturer": "6",
+        "battery": "4030 mAh",
+        "camera": "Chính 48 MP & Phụ 13 MP, 8 MP, 8 MP",
+        "processor": "MediaTek Helio P35 8 nhân",
+        "screen": "IPS LCD, 6.22inch, HD+",
+        "storage": "2GB/32GB"
+    },
+    {
+        "name": "Vivo Y30",
+        "baseprice": "$1950",
+        "discountprice": "$1900",
+        "cover": "https://cdn.tgdd.vn/Products/Images/42/222585/vivo-y30-xanh-new-600x600-600x600.jpg",
+        "idmanufacturer": "6",
+        "battery": "4500 mAh, có sạc nhanh",
+        "camera": "Chính 13 MP & Phụ 8 MP, 2 MP, 2 MP",
+        "processor": "MediaTek Helio P35 8 nhân",
+        "screen": "IPS LCD, 6.47inch, HD+",
+        "storage": "4GB/128GB"
+    },
+    {
+        "name": "Vivo V19",
+        "baseprice": "$1950",
+        "discountprice": "$1900",
+        "cover": "https://cdn.tgdd.vn/Products/Images/42/217859/vivo-v19-xanh-new-600x600-600x600.jpg",
+        "idmanufacturer": "6",
+        "battery": "4500 mAh, có sạc nhanh",
+        "camera": "Chính 48 MP & Phụ 8 MP, 2 MP, 2 MP",
+        "processor": "Snapdragon 712 8 nhân",
+        "screen": "Super AMOLED, 6.44inch, Full HD+",
+        "storage": "8GB/128GB"
+    },
+    {
+        "name": "Vivo Y50",
+        "baseprice": "$1950",
+        "discountprice": "$1900",
+        "cover": "https://cdn.tgdd.vn/Products/Images/42/219913/vivo-y50-xanh-600x600-600x600.jpg",
+        "idmanufacturer": "6",
+        "battery": "5000 mAh, có sạc nhanh",
+        "camera": "Chính 13 MP & Phụ 8 MP, 2 MP, 2 MP",
+        "processor": "Snapdragon 665 8 nhân",
+        "screen": "IPS LCD, 6.53inch, Full HD+",
+        "storage": "8GB/128GB"
+    }
+]

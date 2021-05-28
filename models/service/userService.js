@@ -1,6 +1,6 @@
 const userModel = require("../mongoose/userModel");
 const bcrypt = require('bcrypt');
-const emailValidator = require("email-validator");
+const emailValidator = require('email-deep-validator');
 const saltRounds = 10;
 let accountdata = "abc";
 
@@ -45,12 +45,18 @@ exports.checkUserRegister = async (req, res, next) => {
     const userExist = await userModel.findOne({ name: req.body.Name });
     // Kiểm tra email cố tồn tại trong cơ sở dữ liệu không
     const emailExist = await userModel.findOne({ email: req.body.Email });
-    const emailValid = await emailValidator.validate(req.body.Email);
+    const EmailValidator = new emailValidator();
+    let emailValid = await EmailValidator.verify(req.body.Email);
     console.log("EMAIL VALID");
     //console.log(emailValid.validators.smtp.reason);
     console.log(emailValid);
 
-    check.valid = emailValid;
+    while(emailValid.validMailbox == null)
+    {
+        emailValid = await EmailValidator.verify(req.body.Email);
+    }
+    
+    check.valid = emailValid.validMailbox;
 
     console.log("KIEM TRA EMAIL TỒN TẠI KHÔNG");
 
@@ -89,6 +95,7 @@ exports.checkUser = async (username, password) => {
     }
     let checkPassword = await bcrypt.compare(password, user.password);
     if (checkPassword) {
+        
         return user;
     }
 
@@ -112,8 +119,10 @@ exports.saveTemporaryAccount = async (req, res, next) => {
     accountdata = {
         name: req.body.Name,
         password: hashedPassword,
+        userName: req.body.username,
         email: req.body.Email,
         avatar: 'http://ssl.gstatic.com/accounts/ui/avatar_2x.png',
+        role: "5fe9b7b8ea0d1f18102eed2f"
     };
 }
 
@@ -124,3 +133,4 @@ exports.getTemporaryAccount = (req, res, next) => {
 exports.setTemporaryAccount = (req, res, next) => {
     accountdata = "abc";
 }
+

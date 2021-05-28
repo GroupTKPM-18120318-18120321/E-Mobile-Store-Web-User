@@ -1,0 +1,28 @@
+[
+    {
+        "name": "Huawei Y6p (Nền tảng Huawei Mobile Service)",
+        "baseprice": "$1950",
+        "discountprice": "$1900",
+        "cover": "https://cdn.tgdd.vn/Products/Images/42/221926/huawei-y6p-xanh-new-600x600-600x600.jpg",
+        "idmanufacturer": "4",
+        "battery": "5000 mAh, có sạc nhanh",
+        "camera": "Chính 13 MP & Phụ 5 MP, 2 MP",
+        "processor": "MediaTek MT6762R 8 nhân",
+        "screen": "IPS LCD, 6.3inch, HD+",
+        "storage": "4GB/64GB"
+    },
+    {
+        "name": "Huawei Nova 7i (Nền tảng Huawei Mobile Service)",
+        "baseprice": "$1950",
+        "discountprice": "$1900",
+        "cover": "https://cdn.tgdd.vn/Products/Images/42/218363/huawei-nova-7i-pink-600x600-1-600x600.jpg",
+        "idmanufacturer": "4",
+        "battery": "4200 mAh, có sạc nhanh",
+        "camera": "Chính 48 MP & Phụ 8 MP, 2 MP, 2 MP",
+        "processor": "Kirin 810 8 nhân",
+        "screen": "LTPS LCD, 6.4inch, Full HD+",
+        "storage": "4GB/64GB"
+    }
+
+    
+]

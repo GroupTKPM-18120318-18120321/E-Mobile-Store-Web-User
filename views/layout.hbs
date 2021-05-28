@@ -49,8 +49,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		href="//fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i&amp;subset=cyrillic,cyrillic-ext,greek,greek-ext,latin-ext,vietnamese"
 		rel="stylesheet">
 	<!-- //web fonts -->
-	{{{_sections.css}}}
-
+   	{{{_sections.css}}}
+	{{{_sections.detailCss}}}	
 
 </head>
 
@@ -517,9 +517,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					<div class="row">
 						<!-- search -->
 						<div class="col-10 agileits_search">
-							<form class="form-inline" action="/mobilephonesbrands/search{{search}}" method="get">
-								<input name="search" class="form-control mr-sm-2" type="search" placeholder="Search"
-									aria-label="Search" required>
+							<form class="form-inline" action="/mobilephonesbrands/" method="GET">
+								<input  name="nameProduct" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" value={{_sections.searchValue}}>
 								<button class="btn my-2 my-sm-0" type="submit">Search</button>
 							</form>
 						</div>
@@ -586,32 +585,38 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 										<div class="col-sm-6 multi-gd-img">
 											<ul class="multi-column-dropdown">
 												<li>
-													<a href="/mobilephonesbrands/allmobiles">All mobiles</a>
+													<a href="/mobilephonesbrands/all">All mobiles</a>
 												</li>
 												<li>
-													<a href="/mobilephonesbrands/apple">Apple</a>
+													<a href="/mobilephonesbrands/Apple">Apple</a>
 												</li>
 												<li>
-													<a href="/mobilephonesbrands/samsung">Samsung</a>
+													<a href="/mobilephonesbrands/Samsung">Samsung</a>
 												</li>
 												<li>
-													<a href="/mobilephonesbrands/oppo">Oppo</a>
+													<a href="/mobilephonesbrands/Oppo">Oppo</a>
+												</li>
+												<li>
+													<a href="/mobilephonesbrands/Huawei">Huawei</a>
 												</li>
 											</ul>
 										</div>
 										<div class="col-sm-6 multi-gd-img">
 											<ul class="multi-column-dropdown">
 												<li>
-													<a href="/mobilephonesbrands/xixaomi">Xixaomi</a>
+													<a href="/mobilephonesbrands/Xiaomi">Xiaomi</a>
 												</li>
 												<li>
-													<a href="/mobilephonesbrands/vivo">Vivo</a>
+													<a href="/mobilephonesbrands/Vivo">Vivo</a>
 												</li>
 												<li>
-													<a href="/mobilephonesbrands/realme">Realme</a>
+													<a href="/mobilephonesbrands/Realme">Realme</a>
 												</li>
 												<li>
-													<a href="/mobilephonesbrands/itel">Itel</a>
+													<a href="/mobilephonesbrands/Vsmart">Vsmart</a>
+												</li>
+												<li>
+													<a href="/mobilephonesbrands/Itel">Itel</a>
 												</li>
 											</ul>
 										</div>
@@ -909,7 +914,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						<p class="mb-4">Free Delivery on your first order!</p>
 						<form action="#" method="post">
 							<div class="form-group">
-								<input type="email" class="form-control" placeholder="Email" name="email" required="">
+								<input type="email" class="form-control" placeholder="Email" name="email" >
 								<input type="submit" value="Go">
 							</div>
 						</form>
@@ -1284,7 +1289,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
 
 	<!-- scroll seller -->
-	<script src="js/scroll.js"></script>
+	<script src="/js/scroll.js"></script>
 	<!-- //scroll seller -->
 
 	<!-- easy-responsive-tabs -->
@@ -1421,12 +1426,15 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	<script src="/admin/js/demo/chart-area-demo.js"></script>
 	<script src="/admin/js/demo/chart-pie-demo.js"></script>
 
-	<!-- Custom -->
-	{{!--
-	<script src={{js_file}}></script> --}}
-	<script src="/admin/js/custom.js"></script>
+    <!-- Custom -->
+    {{!-- <script src={{js_file}}></script> --}}
+    <script src="/admin/js/custom.js"></script>
+	
+	{{!-- Ham xu ly tu dinh nghia --}}
+	<script src="/js/handle.js"></script>
 
-	{{{_sections.js}}}
+	{{{_sections.js}}}	
+	{{{_sections.jsDetail}}}	
 </body>
 
 </html>

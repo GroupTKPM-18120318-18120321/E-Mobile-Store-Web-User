@@ -1,7 +1,7 @@
 const formidable = require('formidable');
-const fs = require('fs');
+//const fs = require('fs');
 const path = require('path');
-const mv = require('mv');
+//const mv = require('mv');
 const cloudinary = require('cloudinary').v2; 
 
 cloudinary.config({
@@ -10,7 +10,7 @@ cloudinary.config({
     api_secret: process.env.API_SECRET
 })
 
-const Account = require('../mongoose/accountModel');
+const Account = require('../mongoose/userModel');
 
 exports.changeAvt = async (req, res, next) => {
     const form = formidable({ multiples: true });

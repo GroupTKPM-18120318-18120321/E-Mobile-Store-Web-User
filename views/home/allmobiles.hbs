@@ -1,707 +1,302 @@
+{{#section 'searchValue'}}
+{{searchValue}}
+{{/section}}
 <!-- page -->
-	<div class="services-breadcrumb">
-		<div class="agile_inner_breadcrumb">
-			<div class="container">
-				<ul class="w3_short">
-					<li>
-						<a href="/">Home</a>
-						<i>|</i>
-					</li>
-					<li>
-                        Mobile Phones Brands
-                        <i>|</i>
-                    </li>
-                    <li>
-                        {{title}}
-                    </li>
-				</ul>
-			</div>
+
+<div class="services-breadcrumb">
+	<div class="agile_inner_breadcrumb">
+		<div class="container">
+			<ul class="w3_short">
+				<li>
+					<a href="/">Home</a>
+					<i>|</i>
+				</li>
+				<li>
+					Mobile Phones Brands
+					<i>|</i>
+				</li>
+				<li>
+					{{title}}
+				</li>
+			</ul>
 		</div>
 	</div>
-	<!-- //page -->
+</div>
+<!-- //page -->
 
-	<!-- top Products -->
-	<div class="ads-grid py-sm-5 py-4">
-		<div class="container py-xl-4 py-lg-2">
-			<!-- tittle heading -->
-			<h3 class="tittle-w3l text-center mb-lg-5 mb-sm-4 mb-3">
-				<span>M</span>obiles
-				<span>&</span>
-				<span>C</span>omputers</h3>
-			<!-- //tittle heading -->
-			<div class="row">
-				<!-- product left -->
-				<div class="agileinfo-ads-display col-lg-9">
-					<div class="wrapper">
-						<!-- first section -->
-						<div class="product-sec1 px-sm-4 px-3 py-sm-5  py-3 mb-4">
-							<div class="row">
-								{{#each allmobiles}}
-								<div class="col-md-4 product-men mt-5">
-									<div class="men-pro-item simpleCart_shelfItem">
-										<div class="men-thumb-item text-center">
-											<img src= {{cover}} alt="" width="200px" height="230px">
-											<div class="men-cart-pro">
-												<div class="inner-men-cart-pro">
-													<a href="/mobilephonesbrands/allmobiles/detail/{{_id}}" class="link-product-add-cart">Quick View</a>
-												</div>
-											</div>
-										</div>
-										<span class="product-new-top">New</span>
-										<div class="item-info-product text-center border-top mt-4">
-											<h4 class="pt-1">
-												<a href="/mobilephonesbrands/allmobiles/detail/{{_id}}"> {{name}} </a>
-											</h4>
-											<div class="info-product-price my-2">
-												<span class="item_price">{{discountprice}}</span>
-												<del>{{baseprice}}</del>
-											</div>
-											<div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out">
-												<form action="#" method="post">
-													<fieldset>
-														<input type="hidden" name="cmd" value="_cart" />
-														<input type="hidden" name="add" value="1" />
-														<input type="hidden" name="business" value=" " />
-														<input type="hidden" name="item_name" value={{name}} />
-														<input type="hidden" name="amount" value={{discountprice}} />
-														<input type="hidden" name="discount_amount" value="1.00" />
-														<input type="hidden" name="currency_code" value="USD" />
-														<input type="hidden" name="return" value=" " />
-														<input type="hidden" name="cancel_return" value=" " />
-														<input type="submit" name="submit" value="Add to cart" class="button btn" />
-													</fieldset>
-												</form>
-											</div>
-										</div>
-									</div>
+<!-- top Products -->
+<div class="ads-grid py-sm-5 py-4">
+	<div class="container py-xl-4 py-lg-2">
+		<!-- tittle heading -->
+		<h3 class="tittle-w3l text-center mb-lg-5 mb-sm-4 mb-3">
+			<span>M</span>obiles
+			<span>&</span>
+			<span>C</span>omputers
+		</h3>
+		<!-- //tittle heading -->
+		<div class="row">
+			<!-- product left -->
+			<div class="agileinfo-ads-display col-lg-9">
+				<div class="wrapper">
+					<!-- first section -->
+					<div class="product-sec1 px-sm-4 px-3 py-sm-5  py-3 mb-4">
+						<div class="row">
+							<div class="mr-auto ml-5">
+								<button type="button" class="btn btn-secondary">Giá cao đến thấp</button>
+								<button type="button" class="btn btn-danger">
+									<a href="?"><i class="far fa-times-circle text-white"></i></a>
+								</button>
+							</div>
+							<div class="btn-group ml-auto mr-5">
+								<button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"
+									aria-haspopup="true" aria-expanded="false">
+									{{!-- <i class="fas fa-filter"></i> --}}
+									Sắp xếp
+								</button>
+								<div class="dropdown-menu">
+									<a class="dropdown-item" href="?sort=1">Giá cao đến thấp</a>
+									<a class="dropdown-item" href="?sort=2">Giá thấp đến cao</a>
+									<a class="dropdown-item" href="?sort=3">Mới ra mắt</a>
+									<a class="dropdown-item" href="?sort=4">Bán chạy nhất</a>
 								</div>
-								{{/each}}
-								{{!-- <div class="col-md-4 product-men mt-md-0 mt-5">
-									<div class="men-pro-item simpleCart_shelfItem">
-										<div class="men-thumb-item text-center">
-											<img src="images/m2.jpg" alt="">
-											<div class="men-cart-pro">
-												<div class="inner-men-cart-pro">
-													<a href="single.html" class="link-product-add-cart">Quick View</a>
-												</div>
-											</div>
-											<span class="product-new-top">New</span>
-
-										</div>
-										<div class="item-info-product text-center border-top mt-4">
-											<h4 class="pt-1">
-												<a href="single.html">OPPO A37f</a>
-											</h4>
-											<div class="info-product-price my-2">
-												<span class="item_price">$230.00</span>
-												<del>$250.00</del>
-											</div>
-											<div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out">
-												<form action="#" method="post">
-													<fieldset>
-														<input type="hidden" name="cmd" value="_cart" />
-														<input type="hidden" name="add" value="1" />
-														<input type="hidden" name="business" value=" " />
-														<input type="hidden" name="item_name" value="OPPO A37f" />
-														<input type="hidden" name="amount" value="230.00" />
-														<input type="hidden" name="discount_amount" value="1.00" />
-														<input type="hidden" name="currency_code" value="USD" />
-														<input type="hidden" name="return" value=" " />
-														<input type="hidden" name="cancel_return" value=" " />
-														<input type="submit" name="submit" value="Add to cart" class="button btn" />
-													</fieldset>
-												</form>
-											</div>
-
-										</div>
-									</div> 
-								</div>
-								<div class="col-md-4 product-men mt-md-0 mt-5">
-									<div class="men-pro-item simpleCart_shelfItem">
-										<div class="men-thumb-item text-center">
-											<img src="images/m3.jpg" alt="">
-											<div class="men-cart-pro">
-												<div class="inner-men-cart-pro">
-													<a href="single.html" class="link-product-add-cart">Quick View</a>
-												</div>
-											</div>
-											<span class="product-new-top">New</span>
-
-										</div>
-										<div class="item-info-product text-center border-top mt-4">
-											<h4 class="pt-1">
-												<a href="single.html">Apple iPhone X</a>
-											</h4>
-											<div class="info-product-price my-2">
-												<span class="item_price">$280.00</span>
-												<del>$300.00</del>
-											</div>
-											<div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out">
-												<form action="#" method="post">
-													<fieldset>
-														<input type="hidden" name="cmd" value="_cart" />
-														<input type="hidden" name="add" value="1" />
-														<input type="hidden" name="business" value=" " />
-														<input type="hidden" name="item_name" value="Apple iPhone X" />
-														<input type="hidden" name="amount" value="280.00" />
-														<input type="hidden" name="discount_amount" value="1.00" />
-														<input type="hidden" name="currency_code" value="USD" />
-														<input type="hidden" name="return" value=" " />
-														<input type="hidden" name="cancel_return" value=" " />
-														<input type="submit" name="submit" value="Add to cart" class="button btn" />
-													</fieldset>
-												</form>
-											</div>
-										</div>
-									</div>
-								</div> --}}
 							</div>
 						</div>
-						<!-- //first section -->
-						<!-- second section -->
-						{{!-- <div class="product-sec1 px-sm-4 px-3 py-sm-5  py-3 mb-4">
-							<div class="row">
-								<div class="col-md-4 product-men">
-									<div class="men-pro-item simpleCart_shelfItem">
-										<div class="men-thumb-item text-center">
-											<img src="images/mk1.jpg" alt="">
-											<div class="men-cart-pro">
-												<div class="inner-men-cart-pro">
-													<a href="single.html" class="link-product-add-cart">Quick View</a>
-												</div>
+						<div class="row">
+							{{#each allmobiles}}
+							<div class="col-md-4 product-men mt-5">
+								<div class="men-pro-item simpleCart_shelfItem">
+									<div class="men-thumb-item text-center">
+										<img src={{cover}} alt="" class="img-fluid">
+										<div class="men-cart-pro">
+											<div class="inner-men-cart-pro">
+												<a href="/mobilephonesbrands/detail/{{_id}}"
+													class="link-product-add-cart">Quick View</a>
 											</div>
-										</div>
-										<div class="item-info-product text-center border-top mt-4">
-											<h4 class="pt-1">
-												<a href="single.html">Infinix Hot S3</a>
-											</h4>
-											<div class="info-product-price my-2">
-												<span class="item_price">$300.00</span>
-												<del>$320.00</del>
-											</div>
-											<span class="product-new-top">New</span>
-											<div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out">
-												<form action="#" method="post">
-													<fieldset>
-														<input type="hidden" name="cmd" value="_cart" />
-														<input type="hidden" name="add" value="1" />
-														<input type="hidden" name="business" value=" " />
-														<input type="hidden" name="item_name" value="Infinix Hot S3" />
-														<input type="hidden" name="amount" value="300.00" />
-														<input type="hidden" name="discount_amount" value="1.00" />
-														<input type="hidden" name="currency_code" value="USD" />
-														<input type="hidden" name="return" value=" " />
-														<input type="hidden" name="cancel_return" value=" " />
-														<input type="submit" name="submit" value="Add to cart" class="button btn" />
-													</fieldset>
-												</form>
-											</div>
-
 										</div>
 									</div>
-								</div>
-								<div class="col-md-4 product-men mt-md-0 mt-5">
-									<div class="men-pro-item simpleCart_shelfItem">
-										<div class="men-thumb-item text-center">
-											<img src="images/mk2.jpg" alt="">
-											<div class="men-cart-pro">
-												<div class="inner-men-cart-pro">
-													<a href="single.html" class="link-product-add-cart">Quick View</a>
-												</div>
-											</div>
-
+									{{!-- <span class="product-new-top">New</span> --}}
+									<div class="item-info-product text-center border-top mt-4">
+										<h4 class="pt-1">
+											<a href="/mobilephonesbrands/detail/{{_id}}"> {{name}} </a>
+										</h4>
+										<div class="info-product-price my-2">
+											<span class="item_price"><b>{{fdiscountprice}}đ</b></span>
+											<del class="font-weight-light">{{fbaseprice}}đ</del>
 										</div>
-										<div class="item-info-product text-center border-top mt-4">
-											<h4 class="pt-1">
-												<a href="single.html">Moto X4 (6 GB)</a>
-											</h4>
-											<div class="info-product-price my-2">
-												<span class="item_price">$233.00</span>
-												<del>$240.00</del>
-											</div>
-											<div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out">
-												<form action="#" method="post">
-													<fieldset>
-														<input type="hidden" name="cmd" value="_cart" />
-														<input type="hidden" name="add" value="1" />
-														<input type="hidden" name="business" value=" " />
-														<input type="hidden" name="item_name" value="Moto X4 (6 GB)" />
-														<input type="hidden" name="amount" value="233.00" />
-														<input type="hidden" name="discount_amount" value="1.00" />
-														<input type="hidden" name="currency_code" value="USD" />
-														<input type="hidden" name="return" value=" " />
-														<input type="hidden" name="cancel_return" value=" " />
-														<input type="submit" name="submit" value="Add to cart" class="button btn" />
-													</fieldset>
-												</form>
-											</div>
-
-										</div>
-									</div>
-								</div>
-								<div class="col-md-4 product-men mt-md-0 mt-5">
-									<div class="men-pro-item simpleCart_shelfItem">
-										<div class="men-thumb-item text-center">
-											<img src="images/mk3.jpg" alt="">
-											<div class="men-cart-pro">
-												<div class="inner-men-cart-pro">
-													<a href="single.html" class="link-product-add-cart">Quick View</a>
-												</div>
-											</div>
-										</div>
-										<div class="item-info-product text-center border-top mt-4">
-											<h4 class="pt-1">
-												<a href="single.html">iVooMi i Series</a>
-											</h4>
-											<div class="info-product-price my-2">
-												<span class="item_price">$249.00</span>
-												<del>$260.00</del>
-											</div>
-											<span class="product-new-top">New</span>
-											<div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out">
-												<form action="#" method="post">
-													<fieldset>
-														<input type="hidden" name="cmd" value="_cart" />
-														<input type="hidden" name="add" value="1" />
-														<input type="hidden" name="business" value=" " />
-														<input type="hidden" name="item_name" value="iVooMi i Series" />
-														<input type="hidden" name="amount" value="249.00" />
-														<input type="hidden" name="discount_amount" value="1.00" />
-														<input type="hidden" name="currency_code" value="USD" />
-														<input type="hidden" name="return" value=" " />
-														<input type="hidden" name="cancel_return" value=" " />
-														<input type="submit" name="submit" value="Add to cart" class="button btn" />
-													</fieldset>
-												</form>
-											</div>
+										<div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out">
+											<form action="#" method="post">
+												<fieldset>
+													<input type="hidden" name="cmd" value="_cart" />
+													<input type="hidden" name="add" value="1" />
+													<input type="hidden" name="business" value=" " />
+													<input type="hidden" name="item_name" value="{{this.name}}" />
+													<input type="hidden" name="amount" value="{{this.baseprice}}" />
+													<input type="hidden" name="discount_amount" value="{{this.discount}}" />
+													<input type="hidden" name="currency_code" value="USD" />
+													<input type="hidden" name="return" value=" " />
+													<input type="hidden" name="cancel_return" value=" " />
+													<input type="submit" name="submit" value="Add to cart" class="button btn" />
+												</fieldset>
+											</form>
 										</div>
 									</div>
 								</div>
 							</div>
-						</div>
-						<!-- //second section -->
-						<!-- 3rd section -->
-						<div class="product-sec1 px-sm-4 px-3 py-sm-5  py-3 mt-4">
-							<div class="row">
-								<div class="col-md-4 product-men">
-									<div class="men-pro-item simpleCart_shelfItem">
-										<div class="men-thumb-item text-center">
-											<img src="images/mk4.jpg" alt="" class="img-fluid">
-											<div class="men-cart-pro">
-												<div class="inner-men-cart-pro">
-													<a href="single.html" class="link-product-add-cart">Quick View</a>
-												</div>
-											</div>
-										</div>
-										<div class="item-info-product text-center border-top mt-4">
-											<h4 class="pt-1">
-												<a href="single.html">Dell Vostro Laptop</a>
-											</h4>
-											<div class="info-product-price my-2">
-												<span class="item_price">$252.00</span>
-												<del>$260.00</del>
-											</div>
-											<div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out">
-												<form action="#" method="post">
-													<fieldset>
-														<input type="hidden" name="cmd" value="_cart" />
-														<input type="hidden" name="add" value="1" />
-														<input type="hidden" name="business" value=" " />
-														<input type="hidden" name="item_name" value="Dell Vostro Laptop" />
-														<input type="hidden" name="amount" value="252.00" />
-														<input type="hidden" name="discount_amount" value="1.00" />
-														<input type="hidden" name="currency_code" value="USD" />
-														<input type="hidden" name="return" value=" " />
-														<input type="hidden" name="cancel_return" value=" " />
-														<input type="submit" name="submit" value="Add to cart" class="button btn" />
-													</fieldset>
-												</form>
-											</div>
-
-										</div>
-									</div>
-								</div>
-								<div class="col-md-4 product-men mt-md-0 mt-5 mt-5">
-									<div class="men-pro-item simpleCart_shelfItem">
-										<div class="men-thumb-item text-center">
-											<img src="images/mk5.jpg" alt="" class="img-fluid">
-											<div class="men-cart-pro">
-												<div class="inner-men-cart-pro">
-													<a href="single.html" class="link-product-add-cart">Quick View</a>
-												</div>
-											</div>
-										</div>
-										<div class="item-info-product text-center border-top mt-4">
-											<h4 class="pt-1">
-												<a href="single.html">Acer Laptop</a>
-											</h4>
-											<div class="info-product-price my-2">
-												<span class="item_price">$240.00</span>
-												<del>$260.00</del>
-											</div>
-											<div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out">
-												<form action="#" method="post">
-													<fieldset>
-														<input type="hidden" name="cmd" value="_cart" />
-														<input type="hidden" name="add" value="1" />
-														<input type="hidden" name="business" value=" " />
-														<input type="hidden" name="item_name" value="Acer Laptop" />
-														<input type="hidden" name="amount" value="240.00" />
-														<input type="hidden" name="discount_amount" value="1.00" />
-														<input type="hidden" name="currency_code" value="USD" />
-														<input type="hidden" name="return" value=" " />
-														<input type="hidden" name="cancel_return" value=" " />
-														<input type="submit" name="submit" value="Add to cart" class="button btn" />
-													</fieldset>
-												</form>
-											</div>
-
-										</div>
-									</div>
-								</div>
-								<div class="col-md-4 product-men mt-md-0 mt-5 mt-5">
-									<div class="men-pro-item simpleCart_shelfItem">
-										<div class="men-thumb-item text-center">
-											<img src="images/mk6.jpg" alt="" class="img-fluid">
-											<div class="men-cart-pro">
-												<div class="inner-men-cart-pro">
-													<a href="single.html" class="link-product-add-cart">Quick View</a>
-												</div>
-											</div>
-										</div>
-										<div class="item-info-product text-center border-top mt-4">
-											<h4 class="pt-1">
-												<a href="single.html">Lenovo </a>
-											</h4>
-											<div class="info-product-price my-2">
-												<span class="item_price">$300.00</span>
-												<del>$320.00</del>
-											</div>
-											<div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out">
-												<form action="#" method="post">
-													<fieldset>
-														<input type="hidden" name="cmd" value="_cart" />
-														<input type="hidden" name="add" value="1" />
-														<input type="hidden" name="business" value=" " />
-														<input type="hidden" name="item_name" value="Alcatel Tablet" />
-														<input type="hidden" name="amount" value="300.00" />
-														<input type="hidden" name="discount_amount" value="1.00" />
-														<input type="hidden" name="currency_code" value="USD" />
-														<input type="hidden" name="return" value=" " />
-														<input type="hidden" name="cancel_return" value=" " />
-														<input type="submit" name="submit" value="Add to cart" class="button btn" />
-													</fieldset>
-												</form>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-						<!-- //3rd section -->
-						<!-- fourth section -->
-						<div class="product-sec1 px-sm-4 px-3 py-sm-5  py-3 mt-4">
-							<div class="row">
-								<div class="col-md-4 product-men">
-									<div class="men-pro-item simpleCart_shelfItem">
-										<div class="men-thumb-item text-center">
-											<img src="images/mk7.jpg" alt="" class="img-fluid">
-											<div class="men-cart-pro">
-												<div class="inner-men-cart-pro">
-													<a href="single.html" class="link-product-add-cart">Quick View</a>
-												</div>
-											</div>
-										</div>
-										<span class="product-new-top">New</span>
-										<div class="item-info-product text-center border-top mt-4">
-											<h4 class="pt-1">
-												<a href="single.html">Intex Power Bank</a>
-											</h4>
-											<div class="info-product-price my-2">
-												<span class="item_price">$100.00</span>
-												<del>$200.00</del>
-											</div>
-											<div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out">
-												<form action="#" method="post">
-													<fieldset>
-														<input type="hidden" name="cmd" value="_cart" />
-														<input type="hidden" name="add" value="1" />
-														<input type="hidden" name="business" value=" " />
-														<input type="hidden" name="item_name" value="Intex Power Bank" />
-														<input type="hidden" name="amount" value="100.00" />
-														<input type="hidden" name="discount_amount" value="1.00" />
-														<input type="hidden" name="currency_code" value="USD" />
-														<input type="hidden" name="return" value=" " />
-														<input type="hidden" name="cancel_return" value=" " />
-														<input type="submit" name="submit" value="Add to cart" class="button btn" />
-													</fieldset>
-												</form>
-											</div>
-
-										</div>
-									</div>
-								</div>
-								<div class="col-md-4 product-men mt-md-0 mt-5 mt-5">
-									<div class="men-pro-item simpleCart_shelfItem">
-										<div class="men-thumb-item text-center">
-											<img src="images/mk8.jpg" alt="" class="img-fluid">
-											<div class="men-cart-pro">
-												<div class="inner-men-cart-pro">
-													<a href="single.html" class="link-product-add-cart">Quick View</a>
-												</div>
-											</div>
-										</div>
-										<span class="product-new-top">New</span>
-										<div class="item-info-product text-center border-top mt-4">
-											<h4 class="pt-1">
-												<a href="single.html">HP Wireless Printer</a>
-											</h4>
-											<div class="info-product-price my-2">
-												<span class="item_price">$243.00</span>
-												<del>$250.00</del>
-											</div>
-											<div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out">
-												<form action="#" method="post">
-													<fieldset>
-														<input type="hidden" name="cmd" value="_cart" />
-														<input type="hidden" name="add" value="1" />
-														<input type="hidden" name="business" value=" " />
-														<input type="hidden" name="item_name" value="HP Wireless Printer" />
-														<input type="hidden" name="amount" value="243.00" />
-														<input type="hidden" name="discount_amount" value="1.00" />
-														<input type="hidden" name="currency_code" value="USD" />
-														<input type="hidden" name="return" value=" " />
-														<input type="hidden" name="cancel_return" value=" " />
-														<input type="submit" name="submit" value="Add to cart" class="button btn" />
-													</fieldset>
-												</form>
-											</div>
-										</div>
-									</div>
-								</div>
-								<div class="col-md-4 product-men mt-md-0 mt-5 mt-5">
-									<div class="men-pro-item simpleCart_shelfItem">
-										<div class="men-thumb-item text-center">
-											<img src="images/mk9.jpg" alt="" class="img-fluid">
-											<div class="men-cart-pro">
-												<div class="inner-men-cart-pro">
-													<a href="single.html" class="link-product-add-cart">Quick View</a>
-												</div>
-											</div>
-										</div>
-										<div class="item-info-product text-center border-top mt-4">
-											<h4 class="pt-1">
-												<a href="single.html">Alcatel Tablet</a>
-											</h4>
-											<div class="info-product-price my-2">
-												<span class="item_price">$320.00</span>
-												<del>$350.00</del>
-											</div>
-											<div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out">
-												<form action="#" method="post">
-													<fieldset>
-														<input type="hidden" name="cmd" value="_cart" />
-														<input type="hidden" name="add" value="1" />
-														<input type="hidden" name="business" value=" " />
-														<input type="hidden" name="item_name" value="Alcatel Tablet" />
-														<input type="hidden" name="amount" value="320.00" />
-														<input type="hidden" name="discount_amount" value="1.00" />
-														<input type="hidden" name="currency_code" value="USD" />
-														<input type="hidden" name="return" value=" " />
-														<input type="hidden" name="cancel_return" value=" " />
-														<input type="submit" name="submit" value="Add to cart" class="button btn" />
-													</fieldset>
-												</form>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-						<!-- //fourth section -->--}}
-					</div>
-					<nav aria-label="Page navigation example">
-					<ul class="pagination">
-						
-
-						{{#if (equal linkpagecurrent 1)}}
-						<li class="page-item disabled"><a class="page-link" href={{previousPage}}>Previous</a></li>
-						{{else}}
-						<li class="page-item"><a class="page-link" href={{previousPage}}>Previous</a></li>
-						{{/if}}
-
-
-						<li class="page-item active"><a class="page-link" href={{linkpagecurrent}}>{{pagecurrent}}</a></li>
-
-
-						{{#forabc 0 3 1 pagecurrent totalpages}}
-						
-							<li class="page-item"><a class="page-link" href={{linkhasnextpage}}>{{numnextpage}}</a></li>
+							{{/each}}
 							
-						{{/forabc}}
-					
-					
-					
-						{{#if (equal linkpagecurrent totalpages)}}
-						<li class="page-item disabled"><a class="page-link" href={{nextpage}} >Next</a></li>
-						{{else}}
-						<li class="page-item"><a class="page-link" href={{nextpage}}>Next</a></li>
-						{{/if}}
-					</ul>
+						</div>
+					</div>
+				</div>
+
+				{{!-- pagination --}}
+				{{#if isPagination}}
+				<div>
+					<nav aria-label="...">
+						<ul class="pagination">
+
+							<li class="page-item {{#unless canGoPrev}}disabled{{/unless}}">
+								<a class="page-link" href="/mobilephonesbrands{{prevPage}}">Previous</a>
+
+							</li>
+
+							{{#each pageItem}}
+							{{#if isActive}}
+							<li class="page-item active">
+								<span class="page-link">
+									{{value}}
+									<span class="sr-only">(current)</span>
+								</span>
+							</li>
+							{{else}}
+							<li class="page-item"><a class="page-link" href="/mobilephonesbrands{{url}}">{{value}}</a>
+							</li>
+							{{/if}}
+							{{/each}}
+
+
+							<li class="page-item {{#unless canGoNext}}disabled{{/unless}}">
+								<a class="page-link" href="/mobilephonesbrands{{nextPage}}">Next</a>
+							</li>
+
+						</ul>
 					</nav>
-				</div> 
+
+				</div>
+				{{/if}}
 				
-				<!-- //product left -->
-				<!-- product right -->
-				<div class="col-lg-3 mt-lg-0 mt-4 p-lg-0">
-					<div class="side-bar p-sm-4 p-3">
-						<div class="search-hotel border-bottom py-2">
-							<h3 class="agileits-sear-head mb-3">Brand</h3>
-							<form action="/mobilephonesbrands/search{{search}}" method="get">
-								<input type="search" placeholder="Search Brand..." name="search" required="">
-								<input type="submit" value=" ">
-							</form>
-							<div class="left-side py-2">
+				{{!-- //pagination --}}
+			</div>
+			
+
+			<!-- //product left -->
+			<!-- product right -->
+			<div class="col-lg-3 mt-lg-0 mt-4 p-lg-0">
+				<div class="side-bar p-sm-4 p-3">
+					<div class="search-hotel border-bottom py-2">
+						<form action="/mobilephonesbrands/filter" method="get">
+							<h2 class="agileits-sear-head mb-3">Bộ lọc</h2>
+							<input type="search" placeholder="Search Brand..." name="search">
+							<input type="submit" value=" ">
+							<div class="left-side py-2 border-bottom">
+								<h3 class="agileits-sear-head mb-3">Brand</h3>
 								<ul>
 									<li>
-										<input type="checkbox" class="checked">
-										<span class="span">Samsung</span>
-									</li>
-									<li>
-										<input type="checkbox" class="checked">
-										<span class="span">Red Mi</span>
-									</li>
-									<li>
-										<input type="checkbox" class="checked">
+										<input type="radio" class="checked" name="manufacturer" value="Apple">
 										<span class="span">Apple</span>
 									</li>
 									<li>
-										<input type="checkbox" class="checked">
-										<span class="span">Nexus</span>
+										<input type="radio" class="checked" name="manufacturer" value="Samsung">
+										<span class="span">Samsung</span>
 									</li>
 									<li>
-										<input type="checkbox" class="checked">
-										<span class="span">Motorola</span>
+										<input type="radio" class="checked" name="manufacturer" value="Xiaomi">
+										<span class="span">Xiaomi</span>
 									</li>
 									<li>
-										<input type="checkbox" class="checked">
-										<span class="span">Micromax</span>
-									</li>
-									<li>
-										<input type="checkbox" class="checked">
-										<span class="span">Lenovo</span>
-									</li>
-									<li>
-										<input type="checkbox" class="checked">
+										<input type="radio" class="checked" name="manufacturer" value="Oppo">
 										<span class="span">Oppo</span>
 									</li>
 									<li>
-										<input type="checkbox" class="checked">
-										<span class="span">Sony</span>
+										<input type="radio" class="checked" name="manufacturer" value="Vivo">
+										<span class="span">Vivo</span>
 									</li>
 									<li>
-										<input type="checkbox" class="checked">
-										<span class="span">LG</span>
+										<input type="radio" class="checked" name="manufacturer" value="Realme">
+										<span class="span">Realme</span>
 									</li>
 									<li>
-										<input type="checkbox" class="checked">
-										<span class="span">One Plus</span>
+										<input type="radio" class="checked" name="manufacturer" value="Vsmart">
+										<span class="span">Vsmart</span>
+									</li>
+									<li>
+										<input type="radio" class="checked" name="manufacturer" value="Itel">
+										<span class="span">Itel</span>
 									</li>
 								</ul>
 							</div>
-						</div>
-						<!-- ram -->
-						<div class="left-side border-bottom py-2">
-							<h3 class="agileits-sear-head mb-3">Ram</h3>
-							<ul>
-								<li>
-									<input type="checkbox" class="checked">
-									<span class="span">Less than 512 MB</span>
-								</li>
-								<li>
-									<input type="checkbox" class="checked">
-									<span class="span">512 MB - 1 GB</span>
-								</li>
-								<li>
-									<input type="checkbox" class="checked">
-									<span class="span">1 GB</span>
-								</li>
-								<li>
-									<input type="checkbox" class="checked">
-									<span class="span">2 GB</span>
-								</li>
-								<li>
-									<input type="checkbox" class="checked">
-									<span class="span">3 GB</span>
-								</li>
-								<li>
-									<input type="checkbox" class="checked">
-									<span class="span">5 GB</span>
-								</li>
-								<li>
-									<input type="checkbox" class="checked">
-									<span class="span">6 GB</span>
-								</li>
-								<li>
-									<input type="checkbox" class="checked">
-									<span class="span">6 GB & Above</span>
-								</li>
-							</ul>
-						</div>
-						<!-- //ram -->
-						<!-- price -->
-						<div class="range border-bottom py-2">
-							<h3 class="agileits-sear-head mb-3">Price</h3>
-							<div class="w3l-range">
+
+							<!-- ram -->
+							<div class="left-side border-bottom py-2">
+								<h3 class="agileits-sear-head mb-3">Ram</h3>
 								<ul>
 									<li>
-										<a href="#">Under $1,000</a>
-									</li>
-									<li class="my-1">
-										<a href="#">$1,000 - $5,000</a>
+										<input type="radio" class="checked" name="storage" value="duoi-2GB">
+										<span class="span">Dưới 2 GB</span>
 									</li>
 									<li>
-										<a href="#">$5,000 - $10,000</a>
-									</li>
-									<li class="my-1">
-										<a href="#">$10,000 - $20,000</a>
+										<input type="radio" class="checked" name="storage" value="tu-2GB-4GB">
+										<span class="span">Từ 2GB đên 4GB</span>
 									</li>
 									<li>
-										<a href="#">$20,000 $30,000</a>
+										<input type="radio" class="checked" name="storage" value="tu-4GB-8GB">
+										<span class="span">Từ 4GB đên 8GB</span>
 									</li>
-									<li class="mt-1">
-										<a href="#">Over $30,000</a>
+									<li>
+										<input type="radio" class="checked" name="storage" value="tren-8GB">
+										<span class="span">Trên 8GB</span>
 									</li>
 								</ul>
 							</div>
-						</div>
-						<!-- //price -->
+							<!-- //ram -->
+							<!-- price -->
+							<div class="range border-bottom py-2">
+								<h3 class="agileits-sear-head mb-3">Price</h3>
+								<div class="w3l-range">
+									<ul>
+										<li>
+											<input type="radio" class="checked" name="price" value="duoi-2tr">
+											<a href="#">Dưới 2 triệu</a>
+										</li>
+										<li class="my-1">
+											<input type="radio" class="checked" name="price" value="tu-2-4-trieu">
+											<a href="#">Từ 2 - 4 triệu</a>
+										</li>
+										<li>
+											<input type="radio" class="checked" name="price" value="tu-4-7-trieu">
+											<a href="#">Từ 4 -7 triệu</a>
+										</li>
+										<li class="my-1">
+											<input type="radio" class="checked" name="price" value="tu-7-13-trieu">
+											<a href="#">Từ 7 - 13 triệu</a>
+										</li>
+										<li>
+											<input type="radio" class="checked" name="price" value="tu-13-20-trieu">
+											<a href="#">Từ 13 - 20 triệu</a>
+										</li>
+										<li class="mt-1">
+											<input type="radio" class="checked" name="price" value="tren-20-trieu">
+											<a href="#">Trên 20 triệu</a>
+										</li>
+									</ul>
+								</div>
+							</div>
+							<!-- //price -->
+
+							{{!-- Release Date --}}
+							<div class="left-side py-2">
+								<h3 class="agileits-sear-head mb-3">New Arrivals</h3>
+								<ul>
+									<li>
+										<input type="radio" class="checked" name="release" value="30-ngay">
+										<span class="span">Last 30 days</span>
+									</li>
+									<li>
+										<input type="radio" class="checked" name="release" value="90-ngay">
+										<span class="span">Last 90 days</span>
+									</li>
+								</ul>
+							</div>
+							{{!-- //Release Date --}}
+
+						</form>
+						
+						{{!--
 						<!-- discounts -->
 						<div class="left-side border-bottom py-2">
 							<h3 class="agileits-sear-head mb-3">Discount</h3>
 							<ul>
 								<li>
-									<input type="checkbox" class="checked">
+									<input type="radio" class="checked">
 									<span class="span">5% or More</span>
 								</li>
 								<li>
-									<input type="checkbox" class="checked">
+									<input type="radio" class="checked">
 									<span class="span">10% or More</span>
 								</li>
 								<li>
-									<input type="checkbox" class="checked">
+									<input type="radio" class="checked">
 									<span class="span">20% or More</span>
 								</li>
 								<li>
-									<input type="checkbox" class="checked">
+									<input type="radio" class="checked">
 									<span class="span">30% or More</span>
 								</li>
 								<li>
-									<input type="checkbox" class="checked">
+									<input type="radio" class="checked">
 									<span class="span">50% or More</span>
 								</li>
 								<li>
-									<input type="checkbox" class="checked">
+									<input type="radio" class="checked">
 									<span class="span">60% or More</span>
 								</li>
 							</ul>
@@ -712,15 +307,15 @@
 							<h3 class="agileits-sear-head mb-3">Offers</h3>
 							<ul>
 								<li>
-									<input type="checkbox" class="checked">
+									<input type="radio" class="checked">
 									<span class="span">Exchange Offer</span>
 								</li>
 								<li>
-									<input type="checkbox" class="checked">
+									<input type="radio" class="checked">
 									<span class="span">No Cost EMI</span>
 								</li>
 								<li>
-									<input type="checkbox" class="checked">
+									<input type="radio" class="checked">
 									<span class="span">Special Price</span>
 								</li>
 							</ul>
@@ -731,36 +326,24 @@
 							<h3 class="agileits-sear-head mb-3">Cash On Delivery</h3>
 							<ul>
 								<li>
-									<input type="checkbox" class="checked">
+									<input type="radio" class="checked">
 									<span class="span">Eligible for Cash On Delivery</span>
 								</li>
 							</ul>
 						</div>
-						<!-- //delivery -->
-						<!-- arrivals -->
-						<div class="left-side border-bottom py-2">
-							<h3 class="agileits-sear-head mb-3">New Arrivals</h3>
-							<ul>
-								<li>
-									<input type="checkbox" class="checked">
-									<span class="span">Last 30 days</span>
-								</li>
-								<li>
-									<input type="checkbox" class="checked">
-									<span class="span">Last 90 days</span>
-								</li>
-							</ul>
-						</div>
+						<!-- //delivery --> --}}
+						{{!-- <!-- arrivals -->
+
 						<div class="left-side py-2">
 							<h3 class="agileits-sear-head mb-3">Availability</h3>
 							<ul>
 								<li>
-									<input type="checkbox" class="checked">
+									<input type="radio" class="checked">
 									<span class="span">Exclude Out of Stock</span>
 								</li>
 							</ul>
 						</div>
-						<!-- //arrivals -->
+						<!-- //arrivals --> --}}
 					</div>
 					<!-- //product right -->
 				</div>

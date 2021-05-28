@@ -1,0 +1,86 @@
+[
+    {
+        "name": "iPhone 12 Pro Max 256GB",
+        "baseprice": "$1950",
+        "discountprice": "$1900",
+        "cover": "https://cdn.tgdd.vn/Products/Images/42/228743/iphone-12-pro-max-xam-new-600x600-600x600.jpg",
+        "idmanufacturer": "1",
+        "battery": "3687 mAh, có sạc nhanhh",
+        "camera": "3 camera 12 MP",
+        "processor": "Apple A14 Bionic 6 nhân",
+        "screen": "OLED, 6.7inch, Super Retina XDR",
+        "storage": "6GB/256GB"
+    },
+    {
+        "name": "iPhone 12 256GB",
+        "baseprice": "$1950",
+        "discountprice": "$1900",
+        "cover": "https://cdn.tgdd.vn/Products/Images/42/228737/iphone-12-trang-new-600x600-600x600.jpg",
+        "idmanufacturer": "1",
+        "battery": "2815 mAh, có sạc nhanh",
+        "camera": "2 camera 12 MP",
+        "processor": "Apple A14 Bionic 6 nhân",
+        "screen": "OLED, 6.1inch, Super Retina XDR",
+        "storage": "4GB/256GB"
+    },
+    {
+        "name": "iPhone 11 Pro 256GB",
+        "baseprice": "$1950",
+        "discountprice": "$1900",
+        "cover": "https://cdn.tgdd.vn/Products/Images/42/210655/iphone-11-pro-xam-600x600-600x600.jpg",
+        "idmanufacturer": "1",
+        "battery": "3046 mAh, có sạc nhanh",
+        "camera": "3 camera 12 MP",
+        "processor": "Apple A13 Bionic 6 nhân",
+        "screen": "OLED, 5.8inch, Super Retina XDR",
+        "storage": "4GB/256GB"
+    },
+    {
+        "name": "iPhone 12 mini 256GB",
+        "baseprice": "$1950",
+        "discountprice": "$1900",
+        "cover": "https://cdn.tgdd.vn/Products/Images/42/228742/iphone-23-mini-den-new-600x600-600x600.jpg",
+        "idmanufacturer": "1",
+        "battery": "2227 mAh, có sạc nhanh",
+        "camera": "2 camera 12 MP",
+        "processor": "Apple A14 Bionic 6 nhân",
+        "screen": "OLED, 5.4inch, Super Retina XDR",
+        "storage": "4GB/256GB"
+    },
+    {
+        "name": "iPhone 12 mini 256GB",
+        "baseprice": "$1950",
+        "discountprice": "$1900",
+        "cover": "https://cdn.tgdd.vn/Products/Images/42/228742/iphone-23-mini-den-new-600x600-600x600.jpg",
+        "idmanufacturer": "1",
+        "battery": "2227 mAh, có sạc nhanh",
+        "camera": "2 camera 12 MP",
+        "processor": "Apple A14 Bionic 6 nhân",
+        "screen": "OLED, 5.4inch, Super Retina XDR",
+        "storage": "4GB/256GB"
+    },
+    {
+        "name": "iPhone 7 128GB",
+        "baseprice": "$1950",
+        "discountprice": "$1900",
+        "cover": "https://cdn.tgdd.vn/Products/Images/42/87837/iphone-7-den-new-600x600-600x600.jpg",
+        "idmanufacturer": "1",
+        "battery": "1960 mAh",
+        "camera": "1 camera 12 MP",
+        "processor": "Apple A10 Fusion 4 nhân",
+        "screen": "LED-backlit IPS LCD, 4.7inch, Retina HD",
+        "storage": "2GB/128GB"
+    },
+    {
+        "name": "iPhone 11 128GB",
+        "baseprice": "$1950",
+        "discountprice": "$1900",
+        "cover": "https://cdn.tgdd.vn/Products/Images/42/210644/TimerThumb/iphone-11-128gb-(8).jpg",
+        "idmanufacturer": "1",
+        "battery": "3110 mAh, có sạc nhanh",
+        "camera": "2 camera 12 MP",
+        "processor": "Apple A13 Bionic 6 nhân",
+        "screen": "IPS LCD, 6.1inch, Liquid Retina",
+        "storage": "4GB/128GB"
+    }
+]

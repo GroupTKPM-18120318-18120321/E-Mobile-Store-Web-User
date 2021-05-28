@@ -1,0 +1,110 @@
+[
+    {
+        "name": "Vsmart Joy 4 (6GB/64GB)",
+        "baseprice": "$1950",
+        "discountprice": "$1900",
+        "cover": "https://cdn.tgdd.vn/Products/Images/42/231992/vsmart-joy-4-6gb-xanh-600x600-600x600.jpg",
+        "idmanufacturer": "8",
+        "battery": "5000 mAh, có sạc nhanh",
+        "camera": "Chính 16 MP & Phụ 8 MP, 2 MP, 2 MP",
+        "processor": "Snapdragon 665 8 nhân",
+        "screen": "LTPS IPS LCD, 6.53inch, Full HD+",
+        "storage": "6GB/64GB"
+    },
+    {
+        "name": "Vsmart Aris (8GB/128GB)",
+        "baseprice": "$1950",
+        "discountprice": "$1900",
+        "cover": "https://cdn.tgdd.vn/Products/Images/42/230413/vsmart-aris-xanhduong-600x600-600x600.jpg",
+        "idmanufacturer": "8",
+        "battery": "5000 mAh, có sạc nhanh",
+        "camera": "Chính 64 MP & Phụ 8 MP, 8 MP, 2 MP",
+        "processor": "Snapdragon 730 8 nhân",
+        "screen": "AMOLED, 6.39inch, Full HD+",
+        "storage": "8GB/128GB"
+    },
+    {
+        "name": "Vsmart Joy 4 (4GB/64GB)",
+        "baseprice": "$1950",
+        "discountprice": "$1900",
+        "cover": "https://cdn.tgdd.vn/Products/Images/42/228888/vsmart-joy-4-trang-600x600.jpg",
+        "idmanufacturer": "8",
+        "battery": "5000 mAh, có sạc nhanh",
+        "camera": "Chính 16 MP & Phụ 8 MP, 2 MP, 2 MP",
+        "processor": "Snapdragon 665 8 nhân",
+        "screen": "LTPS IPS LCD, 6.53inch, Full HD+",
+        "storage": "4GB/64GB"
+    },
+    {
+        "name": "Vsmart Aris Pro",
+        "baseprice": "$1950",
+        "discountprice": "$1900",
+        "cover": "https://cdn.tgdd.vn/Products/Images/42/228531/vsmart-aris-pro-green-600jpg-600x600.jpg",
+        "idmanufacturer": "8",
+        "battery": "4000 mAh, có sạc nhanh",
+        "camera": "Chính 64 MP & Phụ 8 MP, 8 MP, 2 MP",
+        "processor": "Snapdragon 730 8 nhân",
+        "screen": "AMOLED, 6.39inch, Full HD+",
+        "storage": "8GB/128GB"
+    },
+    {
+        "name": "Vsmart Aris (6GB/64GB)",
+        "baseprice": "$1950",
+        "discountprice": "$1900",
+        "cover": "https://cdn.tgdd.vn/Products/Images/42/228530/vsmart-aris-xanh-la-new-600x600-600x600.jpg",
+        "idmanufacturer": "8",
+        "battery": "4000 mAh, có sạc nhanh",
+        "camera": "Chính 64 MP & Phụ 8 MP, 8 MP, 2 MP",
+        "processor": "Snapdragon 730 8 nhân",
+        "screen": "AMOLED, 6.39inch, Full HD+",
+        "storage": "6GB/64GB"
+    },
+    {
+        "name": "Vsmart Live 4 6GB",
+        "baseprice": "$1950",
+        "discountprice": "$1900",
+        "cover": "https://cdn.tgdd.vn/Products/Images/42/227529/vsmart-live-4-den-600x600.jpg",
+        "idmanufacturer": "8",
+        "battery": "5000 mAh, có sạc nhanh",
+        "camera": "Chính 48 MP & Phụ 8 MP, 5 MP, 2 MP",
+        "processor": "Snapdragon 675 8 nhân",
+        "screen": "LTPS IPS LCD, 6.5inch, Full HD+",
+        "storage": "6GB/64GB"
+    },
+    {
+        "name": "Vsmart Star 4 (3GB/32GB)",
+        "baseprice": "$1950",
+        "discountprice": "$1900",
+        "cover": "https://cdn.tgdd.vn/Products/Images/42/225158/vsmart-start-3gb-den-600x600.jpg",
+        "idmanufacturer": "8",
+        "battery": "3500 mAh, có sạc nhanh",
+        "camera": "Chính 48 MP & Phụ 8 MP, 5 MP, 2 MP",
+        "processor": "MediaTek Helio P35 8 nhân",
+        "screen": "IPS LCD, 6.09inch, HD+",
+        "storage": "3GB/32GB"
+    },
+    {
+        "name": "Vsmart Active 3 (6GB/64GB)",
+        "baseprice": "$1950",
+        "discountprice": "$1900",
+        "cover": "https://cdn.tgdd.vn/Products/Images/42/217438/TimerThumb/vsmart-active-3-6gb-(17).jpg",
+        "idmanufacturer": "8",
+        "battery": "4020 mAh, có sạc nhanh",
+        "camera": "Chính 48 MP & Phụ 8 MP, 2 MP",
+        "processor": "MediaTek Helio P60 8 nhân",
+        "screen": "AMOLED, 6.39inch, Full HD+",
+        "storage": "6GB/64GB"
+    },
+    {
+        "name": "Vsmart Bee 3",
+        "baseprice": "$1950",
+        "discountprice": "$1900",
+        "cover": "https://cdn.tgdd.vn/Products/Images/42/216800/vsmart-bee-3-blue-600x600.jpg",
+        "idmanufacturer": "8",
+        "battery": "3000 mAh, có sạc nhanh",
+        "camera": "8 MP",
+        "processor": "MediaTek MT6739WW 4 nhân",
+        "screen": "IPS LCD, 6.0inch, HD+",
+        "storage": "2GB/16GB"
+    }
+]

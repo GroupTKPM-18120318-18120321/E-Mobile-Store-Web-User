@@ -46,10 +46,20 @@ passport.use(new GoogleStrategy({
             //     return done(null, user);
             // } else {
             // if the user isnt in our database, create a new user
-            const user = await User.findOne({ id: profile.id });
 
+            // User dang nhap bang google
+            const user = await User.findOne({ email: profile.emails[0].value });
+
+            
             if (user) {
-                return done(null, user);
+                if(user.id)
+                {
+                    return done(null, user);
+                }
+                else
+                {
+                    return done(null, false, { message: 'Email đã được sử dụng!!!' });
+                }
             }
             else {
                 console.log(profile.id);
@@ -58,7 +68,7 @@ passport.use(new GoogleStrategy({
                     id: profile.id,
                     token: token,
                     name: profile.displayName,
-                    //email: profile.emails[0].value,
+                    email: profile.emails[0].value,
                     avatar: 'http://ssl.gstatic.com/accounts/ui/avatar_2x.png',
                 };
                 var newUser = new User(newPostData);

@@ -1,0 +1,66 @@
+[
+    {
+        "name": "Xiaomi Redmi Note 8",
+        "baseprice": "$1950",
+        "discountprice": "$1900",
+        "cover": "https://cdn.tgdd.vn/Products/Images/42/209535/xiaomi-redmi-note-8-white-1-600x600.jpg",
+        "idmanufacturer": "3",
+        "battery": "4000 mAh, có sạc nhanh",
+        "camera": "Chính 48 MP & Phụ 8 MP, 2 MP, 2 MP",
+        "processor": "Snapdragon 665 8 nhân",
+        "screen": "IPS LCD, 6.3inch, Full HD+",
+        "storage": "4GB/64GB"
+    },
+    {
+        
+        "name": "Xiaomi Redmi Note 9 Pro",
+        "baseprice": "$1950",
+        "discountprice": "$1900",
+        "cover": "https://cdn.tgdd.vn/Products/Images/42/221820/xiaomi-redmi-note-9-pro-white-600x600.jpg",
+        "idmanufacturer": "3",
+        "battery": "5000 mAh, có sạc nhanh",
+        "camera": "Chính 64 MP & Phụ 8 MP, 5 MP, 2 MP",
+        "processor": "Snapdragon 720G 8 nhân",
+        "screen": "IPS LCD, 6.67inch, Full HD+",
+        "storage": "6GB/128GB"
+    },
+    {
+        
+        "name": "Xiaomi Redmi Note 9 Pro 5G",
+        "baseprice": "$1950",
+        "discountprice": "$1900",
+        "cover": "https://cdn.tgdd.vn/Products/Images/42/230767/xiaomi-redmi-note-9-pro-5g-280620-110607-600x600.jpg",
+        "idmanufacturer": "3",
+        "battery": "5000 mAh, có sạc nhanh",
+        "camera": "Chính 108 MP & Phụ 8 MP, 2 MP, 2 MP",
+        "processor": "Snapdragon 750G 5G 8 nhân",
+        "screen": "IPS LCD, 6.67inch, Full HD+",
+        "storage": "8GB/256GB"
+    },
+    {
+        
+        "name": "Xiaomi Redmi Note 8 Pro",
+        "baseprice": "$1950",
+        "discountprice": "$1900",
+        "cover": "https://cdn.tgdd.vn/Products/Images/42/214418/xiaomi-redmi-note-8-pro-trang-new-600x600-600x600.jpg",
+        "idmanufacturer": "3",
+        "battery": "4500 mAh, có sạc nhanh",
+        "camera": "Chính 64 MP & Phụ 8 MP, 2 MP, 2 MPP",
+        "processor": "MediaTek Helio G90T 8 nhân",
+        "screen": "IPS LCD, 6.67inch, Full HD+",
+        "storage": "6GB/128GB"
+    },
+    { 
+        "name": "Xiaomi Redmi 9 ",
+        "baseprice": "$1950",
+        "discountprice": "$1900",
+        "cover": "https://cdn.tgdd.vn/Products/Images/42/224290/TimerThumb/xiaomi-redmi-9-3gb-(2).jpg",
+        "idmanufacturer": "3",
+        "battery": "5020 mAh, có sạc nhanh",
+        "camera": "Chính 64 MP & Phụ 8 MP, 2 MP, 2 MPP",
+        "processor": "MediaTek Helio G80 8 nhân",
+        "screen": "IPS LCD, 6.53inch, Full HD+",
+        "storage": "6GB/64GB"
+    }
+
+]

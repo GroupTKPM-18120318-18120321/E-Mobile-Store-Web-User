@@ -1,0 +1,110 @@
+[
+    {
+        "name": "Realme C17",
+        "baseprice": "$1950",
+        "discountprice": "$1900",
+        "cover": "https://cdn.tgdd.vn/Products/Images/42/227681/realme-c17-green-600x600-1-600x600.jpg",
+        "idmanufacturer": "9",
+        "battery": "5000 mAh, có sạc nhanh",
+        "camera": "Chính 13 MP & Phụ 8 MP, 2 MP, 2 MP",
+        "processor": "Snapdragon 460 8 nhân",
+        "screen": "IPS LCD, 6.5inch, HD+",
+        "storage": "6GB/128GB"
+    },
+    {
+        "name": "Realme 7 Pro",
+        "baseprice": "$1950",
+        "discountprice": "$1900",
+        "cover": "https://cdn.tgdd.vn/Products/Images/42/227689/TimerThumb/realme-7-pro-(4).jpg",
+        "idmanufacturer": "9",
+        "battery": "4500 mAh, có sạc nhanh",
+        "camera": "Chính 64 MP & Phụ 8 MP, 2 MP, 2 MP",
+        "processor": "Snapdragon 720G 8 nhân",
+        "screen": "Super AMOLED, 6.4inch, Full HD+",
+        "storage": "8GB/128GB"
+    },
+    {
+        "name": "Realme 6 Pro",
+        "baseprice": "$1950",
+        "discountprice": "$1900",
+        "cover": "https://cdn.tgdd.vn/Products/Images/42/214645/TimerThumb/realme-6-pro-(2).jpg",
+        "idmanufacturer": "9",
+        "battery": "4300 mAh, có sạc nhanh",
+        "camera": "Chính 64 MP & Phụ 12 MP, 8 MP, 2 MP",
+        "processor": "Snapdragon 720G 8 nhân",
+        "screen": "IPS LCD, 6.6inch, Full HD+",
+        "storage": "8GB/128GB"
+    },
+    {
+        "name": "Realme 7",
+        "baseprice": "$1950",
+        "discountprice": "$1900",
+        "cover": "https://cdn.tgdd.vn/Products/Images/42/227731/TimerThumb/realme-7-(10).jpg",
+        "idmanufacturer": "9",
+        "battery": "5000 mAh, có sạc nhanh",
+        "camera": "Chính 64 MP & Phụ 8 MP, 2 MP, 2 MP",
+        "processor": "MediaTek Helio G95 8 nhân",
+        "screen": "IPS LCD, 6.5inch, Full HD+",
+        "storage": "8GB/128GB"
+    },
+    {
+        "name": "Realme 7i",
+        "baseprice": "$1950",
+        "discountprice": "$1900",
+        "cover": "https://cdn.tgdd.vn/Products/Images/42/227688/TimerThumb/realme-7i-(4).jpg",
+        "idmanufacturer": "9",
+        "battery": "5000 mAh, có sạc nhanh",
+        "camera": "Chính 64 MP & Phụ 8 MP, 2 MP, 2 MP",
+        "processor": "Snapdragon 662 8 nhân",
+        "screen": "IPS LCD, 6.5inch, Full HD+",
+        "storage": "8GB/128GB"
+    },
+    {
+        "name": "Realme 6i",
+        "baseprice": "$1950",
+        "discountprice": "$1900",
+        "cover": "https://cdn.tgdd.vn/Products/Images/42/218360/realme-6i-xanh-duong-new-600x600-600x600.jpg",
+        "idmanufacturer": "9",
+        "battery": "5000 mAh, có sạc nhanh",
+        "camera": "Chính 48 MP & Phụ 8 MP, 2 MP, 2 MP",
+        "processor": "MediaTek Helio G80 8 nhân",
+        "screen": "IPS LCD, 6.5inch, Full HD+",
+        "storage": "4GB/128GB"
+    },
+    {
+        "name": "Realme C15",
+        "baseprice": "$1950",
+        "discountprice": "$1900",
+        "cover": "https://cdn.tgdd.vn/Products/Images/42/226226/realme-c15-xanh-duong-600x600-600x600.jpg",
+        "idmanufacturer": "9",
+        "battery": "5000 mAh, có sạc nhanh",
+        "camera": "Chính 13 & Phụ 8 MP, 2 MP, 2 MP",
+        "processor": "Snapdragon 460 8 nhân",
+        "screen": "IPS LCD, 6.5inch, Full HD+",
+        "storage": "4GB/64GB"
+    },
+    {
+        "name": "Realme 5i",
+        "baseprice": "$1950",
+        "discountprice": "$1900",
+        "cover": "https://cdn.tgdd.vn/Products/Images/42/217331/realme-5i-xanh-duong-new-600x600-1-600x600.jpg",
+        "idmanufacturer": "9",
+        "battery": "5000 mAh, có sạc nhanh",
+        "camera": "Chính 12 & Phụ 8 MP, 2 MP, 2 MP",
+        "processor": "Snapdragon 665 AIE 8 nhân",
+        "screen": "IPS LCD, 6.52inch, Full HD+",
+        "storage": "4GB/64GB"
+    },
+    {
+        "name": "Realme C3",
+        "baseprice": "$1950",
+        "discountprice": "$1900",
+        "cover": "https://cdn.tgdd.vn/Products/Images/42/225176/realme-c3-64gb-xanh-duong-600x600.jpg",
+        "idmanufacturer": "9",
+        "battery": "5000 mAh, có sạc nhanh",
+        "camera": "Chính 12 & Phụ 8 MP, 2 MP, 2 MP",
+        "processor": "MediaTek Helio G70 8 nhân",
+        "screen": "IPS LCD, 6.5inch, Full HD+",
+        "storage": "3GB/64GB"
+    }
+]

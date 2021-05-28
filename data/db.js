@@ -1,6 +1,5 @@
 const mongoose=require("mongoose");
-
-console.log("db.js 1");
+require('dotenv').config()
 
 const uri = process.env.PRODUCTS_MONGODB_URL;
 

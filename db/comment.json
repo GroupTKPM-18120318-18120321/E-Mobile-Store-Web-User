@@ -1,0 +1,31 @@
+[
+    {
+        "idProduct":{"$oid":"5fe63633072b293538fffd27"},
+        "nameCustomer": "Phạm Trí",
+        "avatar": "/images/user.jpg",
+        "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        "cmtDate": {"$date": "2020-12-26T08:47:38.913Z"}
+    },
+    {
+        "idProduct":{"$oid":"5fe63633072b293538fffd27"},
+        "nameCustomer": "Phạm Hương",
+        "avatar": "/images/user.jpg",
+        "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        "cmtDate": {"$date": "2020-12-26T08:47:38.913Z"}
+    },
+    {
+        "idProduct":{"$oid":"5fe63633072b293538fffd27"},
+        "nameCustomer": "Phạm Luân",
+        "avatar": "/images/user.jpg",
+        "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        "cmtDate": {"$date": "2020-12-26T08:47:38.913Z"}
+    },
+    {
+        "idProduct":{"$oid":"5fe63633072b293538fffd27"},
+        "nameCustomer": "Phạm Trang",
+        "avatar": "/images/user.jpg",
+        "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        "cmtDate": {"$date": "2020-12-26T08:47:38.913Z"}
+    }
+]
+

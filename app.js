@@ -14,7 +14,7 @@ const { helpers } = require('handlebars');
 
 
 const passport = require('./passport/passport');
-const nodemailer = require('./nodemailer/nodemailer');
+const nodemailer = require('./models/service/nodemailerService');
 const connectDB = require('./data/db');
 const indexRouter = require('./routes/index');
 const brandsRouter = require('./routes/mobilephonesbrands');
@@ -107,7 +107,12 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 // passport middleware
-app.use(session({ secret: 'keyboard cat' }));
+app.set('trust proxy',1);
+app.use(session({
+  resave: false,
+  saveUninitialized: true,
+  secret: 'keyboard cat'
+}));
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(flash());

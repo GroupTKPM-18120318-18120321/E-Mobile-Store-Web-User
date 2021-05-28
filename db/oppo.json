@@ -1,0 +1,62 @@
+[
+    {
+        "name": "OPPO Find X2",
+        "baseprice": "$1990",
+        "discountprice": "$1900",
+        "cover": "https://cdn.tgdd.vn/Products/Images/42/198150/oppo-find-x2-blue-600x600-1-600x600.jpg",
+        "idmanufacturer": "5",
+        "battery": "4200 mAh, có sạc nhanh",
+        "camera": "Chính 48 MP & Phụ 13 MP, 12 MP",
+        "processor": "Snapdragon 865 8 nhân",
+        "screen": "AMOLED, 6.78inch, Quad HD+ (2K+)",
+        "storage": "12GB/256GB"
+    },
+    {
+        "name": "OPPO Reno4 Pro",
+        "baseprice": "$1990",
+        "discountprice": "$1900",
+        "cover": "https://cdn.tgdd.vn/Products/Images/42/223497/oppo-reno4-pro-trang-600x600.jpg",
+        "idmanufacturer": "5",
+        "battery": "4000 mAh, có sạc nhanh",
+        "camera": "Chính 48 MP & Phụ 8 MP, 2 MP, 2 MP",
+        "processor": "Snapdragon 720G 8 nhân",
+        "screen": "AMOLED, 6.5inch, Quad HD+ (2K+)",
+        "storage": "8GB/256GB"
+    },
+    {
+        "name": "OPPO A93",
+        "baseprice": "$1990",
+        "discountprice": "$1900",
+        "cover": "https://cdn.tgdd.vn/Products/Images/42/229056/oppo-a93-trang-14-600x600.jpg",
+        "idmanufacturer": "5",
+        "battery": "4000 mAh, có sạc nhanh",
+        "camera": "Chính 48 MP & Phụ 8 MP, 2 MP, 2 MP",
+        "processor": "MediaTek Helio P95 8 nhân",
+        "screen": "AMOLED, 6.43inch, Quad HD+ (2K+)",
+        "storage": "8GB/128GB"
+    },
+    {
+        "name": "OPPO A92",
+        "baseprice": "$1990",
+        "discountprice": "$1900",
+        "cover": "https://cdn.tgdd.vn/Products/Images/42/220654/TimerThumb/oppo-a92-(21).jpg",
+        "idmanufacturer": "5",
+        "battery": "4500 mAh, có sạc nhanh",
+        "camera": "Chính 48 MP & Phụ 8 MP, 2 MP, 2 MP",
+        "processor": "Snapdragon 665 8 nhân",
+        "screen": "TFT LCD, 6.5inch, Full HD+",
+        "storage": "8GB/128GB"
+    },
+    {
+        "name": "OPPO A53 (2020)",
+        "baseprice": "$1990",
+        "discountprice": "$1900",
+        "cover": "https://cdn.tgdd.vn/Products/Images/42/227295/oppo-a53-2020-xanh-600x600.jpg",
+        "idmanufacturer": "5",
+        "battery": "5000 mAh, có sạc nhanh",
+        "camera": "Chính 13 MP & Phụ 2 MP, 2 MP",
+        "processor": "Snapdragon 460 8 nhân",
+        "screen": "IPS LCD, 6.5inch, HD+",
+        "storage": "4GB/128GB"
+    }
+]
