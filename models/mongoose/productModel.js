@@ -46,16 +46,6 @@ const formatConcurency = (concurency)=>{
     return result;
 }
 
-const getConcurency = (strConcurency) =>{
-    let result=0;
-    const arr=strConcurency.split(".");
-    for(let i of arr){
-        result = result*1000+parseInt(i);
-    }  
-
-    return result;
-}
-
 productSchema.virtual('fbaseprice').get(function() {
     return formatConcurency(this.baseprice); 
 });
@@ -68,14 +58,6 @@ productSchema.virtual('discount').get(function() {
     return this.baseprice-this.discountprice; 
 });
 
-productSchema.virtual('ram').get(function(){
-    let result;
-    if(this.storage!="None"){
-        result= this.storage.substring(0,this.storage.search(/[a-b]/i)-1);
-    }
-    else result = "0";
-    return +result;
-})
 
 
 productSchema.plugin(mongoosePaginate);

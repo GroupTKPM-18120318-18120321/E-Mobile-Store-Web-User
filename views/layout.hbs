@@ -113,7 +113,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	</div>
 
 	<!-- Button trigger modal(select-location) -->
-	<div id="small-dialog1" class="mfp-hide">
+	{{!-- <div id="small-dialog1" class="mfp-hide">
 		<div class="select-city">
 			<h3>
 				<i class="fas fa-map-marker"></i> Please Select Your Location
@@ -489,7 +489,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			</select>
 			<div class="clearfix"></div>
 		</div>
-	</div>
+	</div> --}}
 	<!-- //shop locator (popup) -->
 
 	<!-- modals -->
@@ -524,15 +524,19 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						</div>
 						<!-- //search -->
 						<!-- cart details -->
-						<div class="col-2 top_nav_right text-center mt-sm-0 mt-2">
+						<div class="col-2 top_nav_right text-center ">
 							<div class="wthreecartaits wthreecartaits2 cart cart box_1">
-								<form action="#" method="post" class="last">
-									<input type="hidden" name="cmd" value="_cart">
-									<input type="hidden" name="display" value="1">
-									<button class="btn w3view-cart" type="submit" name="submit" value="">
-										<i class="fas fa-cart-arrow-down"></i>
+								<form action="/cart" method="get">
+									<button class="btn btn-primary my-2 my-sm-0" type="submit">
+											<i class="fas fa-cart-arrow-down"></i>
+											<span id="numbercart">{{numberProduct}}</span>
+											<script type="text/x-handlebars-template" id="templateNumProduct"></script>
 									</button>
+									
 								</form>
+								
+									
+								
 							</div>
 						</div>
 						<!-- //cart details -->
@@ -1429,9 +1433,12 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     <!-- Custom -->
     {{!-- <script src={{js_file}}></script> --}}
     <script src="/admin/js/custom.js"></script>
+
+	{{!-- handlebars --}}
+	<script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
 	
 	{{!-- Ham xu ly tu dinh nghia --}}
-	<script src="/js/handle.js"></script>
+	<script src="/js/cart/cart.js"></script>
 
 	{{{_sections.js}}}	
 	{{{_sections.jsDetail}}}	

@@ -3,16 +3,8 @@ const Account = require('../models/mongoose/userModel');
 
 exports.displayInfo = async(req, res, next) => {
     const foundAcc = await Account.findOne ({ id: req.params.id});
- 
-    if(req.user)
-    {
-        res.render('account/userProfile', {foundAcc, isLogin: true});
-    }
-    else
-    {
-        res.redirect('/');
-    }
-    
+    //console.log(foundAcc);
+    res.render('account/userProfile', {foundAcc, isLogin: true});
 };
 
 exports.changeCustomerAvt = async(req, res, next) => {

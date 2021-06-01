@@ -2,7 +2,7 @@
 <link href="/css/menu.css" rel="stylesheet" type="text/css" media="all" />
 {{/section}}
 {{#section 'jsDetail'}}
-<script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+{{!-- <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script> --}}
 <script type="text/javascript" src="/js/comment/handle.js"></script>
 {{/section}}
 <div class="banner-bootom-w3-agileits py-5">
@@ -174,16 +174,18 @@
 											{{!-- //Phản hồi --}}
 
 											{{!-- Xem thêm --}}
+											{{#if numChild}}
 											<div data-toggle="collapse" aria-expanded="false" aria-controls="{{_id}}"
 												href="#{{_id}}">
 												<span class="text-primary" style="cursor:pointer" onclick="loadChildComment('{{_id}}')">
 													<i class="fa fa-chevron-down mr-2" aria-hidden="true"></i>Xem
-													thêm</span>
+													thêm {{numChild}} phản hồi</span>
 											</div>
 
 											<div id="{{_id}}" class="collapse">
 												
 											</div>
+											{{/if}}
 											{{!-- Xem thêm --}}
 
 										</div>
@@ -324,10 +326,11 @@
 				{{!-- //Phản hồi --}}
 
 				{{!-- Xem thêm --}}
+				\{{#if numChild}}
 				<div data-toggle="collapse" aria-expanded="false" aria-controls="\{{_id}}"
 					href="#\{{_id}}">
 					<span class="text-primary" style="cursor:pointer" onclick="loadChildComment('\{{_id}}')">
-						<i class="fa fa-chevron-down mr-2" aria-hidden="true"></i>Xem thêm</span>
+						<i class="fa fa-chevron-down mr-2" aria-hidden="true"></i>Xem thêm \{{numChild}} phản hồi</span>
 				</div>
 				<div id="\{{_id}}" class="collapse">
 					<div class="commented-section mt-2">
@@ -342,6 +345,7 @@
 						</div>
 					</div>
 				</div>
+				\{{/if}}
 				{{!-- Xem thêm --}}
 			</div>
 		</div>

@@ -1,9 +1,10 @@
 const productService = require('../models/service/productService');
 const manufacturerService =require('../models/service/manufacturerService'); 
 const commentService = require('../models/service/commentService');
-const datamongoose = require("../models/mongoose/productModel");
-const manufacturerModel = require("../models/mongoose/manufacturerModel");
-const { ObjectId } = require('mongodb');
+const cartService = require('../models/service/cartService');
+const orderService=require('../models/service/orderService');
+const detailOrderService=require('../models/service/detailOrderService');
+const handle=require('../public/js/custom/handle');
 
 exports.product = async(req, res, next) => {
     //Lấy dữ liệu 
@@ -211,7 +212,7 @@ exports.loadChildComment = async(req,res,next)=>{
     const filter={};
     filter.idProduct=req.params.idProduct;
     filter.idParentCmt= req.query.idParentComment;
-    console.log(filter);
+  
     const listComment=await commentService.listChildComment(filter);
     
     res.json({
@@ -224,32 +225,178 @@ exports.about = (req, res, next) => {
 };
 
 exports.contact = (req, res, next) => {
+    console.log(req.user);
     res.render('home/contact');
 };
 
 
-exports.checkout = (req, res, next) => {
-    res.render('home/checkout');
+exports.checkout = async (req, res, next) => {
+    const idUser= req.query.idUser;
+    const sessionId=req.signedCookies.cartSession;
+    const cart = await cartService.cart(sessionId); 
+
+    let totalPrice=0;
+    let product;
+    const cartProduct=cart.listProduct;
+    const listProduct=[];
+    let numProduct=0;
+
+    //Lấy các sản phẩm trong giỏ hàng để render trang web
+    for(let i in cartProduct){
+        product = await productService.findOneProduct({_id:i});
+        product.total= parseInt(cartProduct[i])*parseInt(product.discountprice);
+        product.quantity= parseInt(cartProduct[i]);
+        product.ftotal=handle.formatConcurency(product.total);
+        listProduct.push(product);
+
+        totalPrice+=product.total;
+        numProduct+=1;
+    }
+
+    res.render('home/checkout',{
+        numProduct: numProduct,
+        totalPrice: handle.formatConcurency(totalPrice),
+        listProduct:listProduct});
 };
 
-exports.payment = (req, res, next) => {
+exports.payment = async(req, res, next) => {
+    const idUser= req.query.idUser;
+    const sessionId=req.signedCookies.cartSession; 
+
+    const cart = await cartService.cart(sessionId); 
+
+    let product;
+    const cartProduct=cart.listProduct;
+    const listProduct=[];
+    let numProduct=0;
+    for(let i in cartProduct){
+        product = await productService.findOneProduct({_id:i});
+        product.total= parseInt(cartProduct[i])*parseInt(product.discountprice);
+        product.quantity= parseInt(cartProduct[i]);
+        
+        listProduct.push(product);
+        numProduct+=1;
+    }
+
+    //Tại đây lưu vào detail order
+    // let totalPrice=0;
+    // let product;
+    // const cartProduct=cart.listProduct;
+    // let numProduct=0;
+    // for(let i in cartProduct){
+    //     product = await productService.findOneProduct({_id:i});
+    //     product.total= parseInt(cartProduct[i])*parseInt(product.discountprice);
+    //     product.quantity= parseInt(cartProduct[i]);
+
+    //     detailOrderService.addDetailOrder(product);
+    //     totalPrice+=product.total;
+    //     numProduct+=1;
+    // }
+    console.log("PAYMENT");
+    console.log(req.body);
+
+    //Dùng req.body dữ liệu lưu vào order
+    
+    //orderService.addOrder(req.body);
+
+
+    //Xóa dữ liệu trong cart giỏ hàng
+    //cartService.removeCart(sessionId);
+
     res.render('home/payment');
 };
 
-exports.filter = async(req,res,next)=>{
-    console.log("FILTER")
-    const filter={
-        manufacturer: req.query.manufacturer,
-        storage: req.query.storage,
-        price: req.query.price,
-        release: req.query.release,
-    };
+exports.cart =async (req,res,next)=>{
+    const sessionId=req.signedCookies.cartSession;
+    //const idProduct=req.query.idProduct;
+    console.log(sessionId);
+    const cart = await cartService.cart(sessionId); 
 
-    const product = await productService.findProductByInfo(filter)
-    
+    let totalPrice=0;
+    let product;
+    const cartProduct=cart.listProduct;
+    const listProduct=[];
+    let numProduct=0;
+    for(let i in cartProduct){
+        product = await productService.findOneProduct({_id:i});
+        product.total= parseInt(cartProduct[i])*parseInt(product.discountprice);
+        product.quantity= parseInt(cartProduct[i]);
+        product.ftotal=handle.formatConcurency(product.total);
+        console.log(product.ftotal);
+
+        listProduct.push(product);
+
+        totalPrice+=product.total;
+        numProduct+=1;
+    }
+
+    res.render('home/cart',{
+        numProduct: numProduct,
+        totalPrice: handle.formatConcurency(totalPrice),
+        listProduct:listProduct});
+}
+
+exports.addtoCart =async (req,res,next)=>{
+    const sessionId=req.signedCookies.cartSession;
+    const idProduct=req.query.idProduct;
+   
+    await cartService.pushProduct(sessionId,idProduct);
+
+    const cart = await cartService.cart(sessionId); 
+    const numProduct =Object.keys(cart.listProduct).length;
+
+    let totalPrice=0;
+    const product=await productService.findOneProduct({_id:idProduct});
+    const cartProduct=cart.listProduct[idProduct];
+    product.total= parseInt(cartProduct)*parseInt(product.discountprice);
+    product.quantity= parseInt(cartProduct);
+    product.ftotal=handle.formatConcurency(product.total);
+
+    console.log(numProduct);
     console.log(product);
-    res.render('home/allmobiles',{
-        allmobiles: product,
-        isLogin:false,
-    });
+    res.json({
+        numProduct: numProduct,
+        totalPrice: handle.formatConcurency(totalPrice),
+        product: product});
+}
+
+exports.popCart =async (req,res,next)=>{
+    const sessionId=req.signedCookies.cartSession;
+    const idProduct=req.query.idProduct;
+   
+    await cartService.popProduct(sessionId,idProduct);
+
+    let totalPrice=0;
+    const cart = await cartService.cart(sessionId); 
+    const numProduct =Object.keys(cart.listProduct).length;
+
+    const product=await productService.findOneProduct({_id:idProduct});
+    const cartProduct=cart.listProduct[idProduct];
+    product.total= parseInt(cartProduct)*parseInt(product.discountprice);
+    product.quantity= parseInt(cartProduct);
+    product.ftotal=handle.formatConcurency(product.total);
+    
+    console.log(numProduct);
+    console.log(product);
+    res.json({
+        numProduct: numProduct,
+        totalPrice: handle.formatConcurency(totalPrice),
+        product: product});
+}
+
+exports.removeCart =async (req,res,next)=>{
+    const sessionId=req.signedCookies.cartSession;
+    const idProduct=req.query.idProduct;
+   
+    await cartService.removeProduct(sessionId,idProduct);
+
+    let totalPrice=0;
+    const cart = await cartService.cart(sessionId); 
+    const numProduct =Object.keys(cart.listProduct).length;
+
+    console.log(numProduct);
+    console.log(totalPrice);
+    res.json({
+        numProduct: numProduct,
+        totalPrice: handle.formatConcurency(totalPrice)});
 }

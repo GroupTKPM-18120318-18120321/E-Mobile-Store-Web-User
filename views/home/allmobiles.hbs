@@ -84,20 +84,7 @@
 											<del class="font-weight-light">{{fbaseprice}}đ</del>
 										</div>
 										<div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out">
-											<form action="#" method="post">
-												<fieldset>
-													<input type="hidden" name="cmd" value="_cart" />
-													<input type="hidden" name="add" value="1" />
-													<input type="hidden" name="business" value=" " />
-													<input type="hidden" name="item_name" value="{{this.name}}" />
-													<input type="hidden" name="amount" value="{{this.baseprice}}" />
-													<input type="hidden" name="discount_amount" value="{{this.discount}}" />
-													<input type="hidden" name="currency_code" value="USD" />
-													<input type="hidden" name="return" value=" " />
-													<input type="hidden" name="cancel_return" value=" " />
-													<input type="submit" name="submit" value="Add to cart" class="button btn" />
-												</fieldset>
-											</form>
+											<input type="button" onclick="addToCart('{{_id}}')" value="Add to Cart" class="button btn"/>
 										</div>
 									</div>
 								</div>
@@ -153,7 +140,7 @@
 			<div class="col-lg-3 mt-lg-0 mt-4 p-lg-0">
 				<div class="side-bar p-sm-4 p-3">
 					<div class="search-hotel border-bottom py-2">
-						<form action="/mobilephonesbrands/filter" method="get">
+						<form action="" method="get">
 							<h2 class="agileits-sear-head mb-3">Bộ lọc</h2>
 							<input type="search" placeholder="Search Brand..." name="search">
 							<input type="submit" value=" ">

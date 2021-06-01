@@ -3,12 +3,6 @@ const commentModel = require('../mongoose/commentModel');
 const limit=10;
 
 exports.Comment = async(pageNumber, itemPerPage, filter)=>{
-
-    const Comment= await commentModel.find({idProduct: filter.idProduct,
-                                            idParentCmt: {$ne:undefined}
-                                            });
-    console.log(Comment);
-
     //Thêm điều kiện
     filter.idParentCmt=undefined;
 
@@ -17,24 +11,18 @@ exports.Comment = async(pageNumber, itemPerPage, filter)=>{
         offset: (pageNumber-1)*itemPerPage,
         limit: itemPerPage,
         sort: sort,
+        lean: false
     }
     
     const listComment = await commentModel.paginate(filter,option);
-    // for(let i=0;i<listComment.docs.length;i++){
+    
+    let count=0;
+    for(let i=0; i<listComment.totalDocs;i++){
+        listComment.docs[i].numChild = await commentModel.countDocuments({idParentCmt:listComment.docs[i]._id, 
+                                        idProduct: listComment.docs[i].idProduct});
 
-    //     console.log(listComment.docs[i].content);
-    //     console.log(listComment.docs[i]._id);
-    //     listComment.docs[i].haveChild=false;
-    //     console.log(listComment.docs[i].haveChild);
-    //     for(let j of Comment){
-    //         console.log(j.idParentCmt);
-    //         if(listComment.docs[i]._id==j.idParentCmt){
-    //             listComment.docs[i].haveChild=true;
-    //             break;
-    //         }
-    //     }
-    //     console.log(listComment.docs[i].haveChild);
-    // }
+    }
+
     return listComment;
 }
 
@@ -42,10 +30,8 @@ exports.listChildComment = async(filter)=>{
     const sort={cmtDate: 1};
     const option={
         sort: sort,
-    };1
+    };
     const listComment=await commentModel.paginate(filter,option);
-
-    console.log(listComment.docs);
     return listComment;
 }
 

@@ -1,0 +1,119 @@
+<!-- page -->
+<div class="services-breadcrumb">
+	<div class="agile_inner_breadcrumb">
+		<div class="container">
+			<ul class="w3_short">
+				<li>
+					<a href="/">Home</a>
+					<i>|</i>
+				</li>
+				<li>Cart</li>
+			</ul>
+		</div>
+	</div>
+</div>
+<!-- //page -->
+<div class="privacy py-sm-5 py-4">
+    <div class="container py-xl-4 py-lg-2">
+        <!-- tittle heading -->
+        <h3 class="tittle-w3l text-center mb-lg-5 mb-sm-4 mb-3">
+            <span>S</span>hopping
+            <span> C</span>art
+        </h3>
+
+        {{#if listProduct}}
+
+       <div class="checkout-right">
+			<h4 class="mb-sm-4 mb-3">Your shopping cart contains:
+				<span id="numProduct">{{numProduct}}</span> Products
+			</h4>
+			<div class="table-responsive">
+				<table class="timetable_sub">
+					<thead>
+						<tr>
+							<th>SL No.</th>
+							<th>Product</th>
+							<th>Quality</th>
+							<th>Product Name</th>
+
+							<th>Price</th>
+							<th>Remove</th>
+						</tr>
+					</thead>
+					<tbody>
+							{{#each listProduct}}
+					<tr class="rem3" id={{_id}}>
+						<td>3</td>
+						<td>
+							<a href="single.html">
+								<img src="{{cover}}" alt=" " class="img-responsive" width="100">
+							</a>
+						</td>
+						<td>
+							<div class="quantity">
+								<div class="quantity-select">
+									<div class="entry value-minus" onclick="popCart('{{_id}}')"></div>
+									<div class="entry value">
+										<span>{{quantity}}</span>
+									</div>
+									<div class="entry value-plus active" onclick="addToCart('{{_id}}')"></div>
+								</div>
+							</div>
+						</td>
+						<td>{{name}}</td>
+						<td>{{ftotal}}đ</td>
+						<td>
+							<a class="btn text-danger" onclick="removeProduct('{{_id}}')"><i class="fas fa-times-circle fa-2x"></i></a>
+						</td>
+					</tr>
+					{{/each}}
+					</tbody>
+				</table>
+			</div>
+		</div>
+
+        <div class="my-3 text-right">
+            <div class="my-3">
+                <span class="h4">Tổng tiền hàng: <span  id="totalPrice" class="text-danger">{{totalPrice}}đ</span></span><br>
+            </div>
+            <button class="submit check_out btn ">
+                <a class="text-white" href="/checkout">Mua hàng</a></button>
+        </div>
+
+
+
+        {{else}}
+        <div class="text-center">
+            <img class="img-fluid" src="/images/emptycart.png">
+            <h4 class="my-2">Giỏ hàng còn trống!</h4>
+            <button class="submit check_out btn"><a class="text-white" href="/mobilephonesbrands/all">Mua
+                    ngay</a></button>
+        </div>
+        {{/if}}
+    </div>
+</div>
+
+<script type="text/x-handlebars-template" id="templateProduct">
+<td>3</td>
+<td>
+    <a href="single.html">
+        <img src="\{{cover}}" alt=" " class="img-responsive" width="100">
+    </a>
+</td>
+<td>
+    <div class="quantity">
+        <div class="quantity-select">
+            <div class="entry value-minus" onclick="popCart('\{{_id}}')">&nbsp;</div>
+            <div class="entry value">
+                <span>\{{quantity}}</span>
+            </div>
+            <div class="entry value-plus active" onclick="addToCart('\{{_id}}')">&nbsp;</div>
+        </div>
+    </div>
+</td>
+<td>\{{name}}</td>
+<td>\{{ftotal}}đ</td>
+<td>
+    <a class="btn text-danger" onclick="removeProduct('\{{_id}}')"><i class="fas fa-times-circle fa-2x"></i></a>
+</td>
+</script>

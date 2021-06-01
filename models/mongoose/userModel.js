@@ -10,6 +10,11 @@ const userSchema = mongoose.Schema({
     email: {type: String, require: true},
     phoneNumber: {type: String, require: true},  
     avatar: {type: String},
+
+    street: {type: String},
+    subDistrict: {type:String},
+    district: {type: String},
+    city:{type: String},
     address: {type: String, require: true},
     accountState:{type: Number,  enum: [0,1], default: 0,},
     id : {type: String, require: true},
@@ -19,6 +24,8 @@ const userSchema = mongoose.Schema({
     gender: {type: String, enum: ["nam","nữ"], require: true},
 })
 
-
+// userSchema.virtual('address').get(function() {
+//     return `${this.street}, ${this.subDistrict}, ${this.district}, ${this.city}`; 
+// });
 
 module.exports = mongoose.model('users', userSchema )
