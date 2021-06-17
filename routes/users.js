@@ -38,11 +38,11 @@ router.get('/logout', function (req, res) {
 //   res.send('respond with a resource');
 // });
 
-router.get('/edit',loginMiddleware.restrict, accountController.displayInfo);
+// router.get('/edit',loginMiddleware.restrict, accountController.displayInfo);
 
-router.get('/edit/:id',loginMiddleware.restrict, accountController.displayInfo);
+// router.get('/edit/:id',loginMiddleware.restrict, accountController.displayInfo);
 
-router.put('/edit/:id',loginMiddleware.restrict, accountController.changeCustomerAvt);
+// router.put('/edit/:id',loginMiddleware.restrict, accountController.changeCustomerAvt);
 
 
 

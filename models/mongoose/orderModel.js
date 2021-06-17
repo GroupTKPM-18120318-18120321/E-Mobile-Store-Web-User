@@ -4,14 +4,14 @@ const Schema = mongoose.Schema();
 console.log("model.js");
 //Tạo model
 const orderSchema = mongoose.Schema({
-    orderDate: {type: String, require: true},
-    deliveryDate: {type: Number, require: true},
+    orderDate: {type: Date, require: true},
+    deliveryDate: {type: Date, require: true},
     street: {type: String},
     subDistrict: {type:String},
     district: {type: String},
     city:{type: String},
 
-    paymentMethod: {type: mongoose.Schema.Types.ObjectId},
+    paymentMethod: {type: String},
     orderStatus: {type: mongoose.Schema.Types.ObjectId},
     idCustomer:{type: mongoose.Schema.Types.ObjectId},
     phone: {type:String},
@@ -41,6 +41,14 @@ const formatConcurency = (concurency)=>{
 
 orderSchema.virtual('ftotal').get(function() {
     return formatConcurency(this.total); 
+});
+
+orderSchema.virtual('time').get(function() {
+    const time= new Date(this.orderDate);
+    const d = time.getDate();
+    const m =  time.getMonth() +1;
+    const y =  time.getFullYear(); 
+    return d + "-" + m + "-" + y;
 });
 
 orderSchema.virtual('address').get(function() {

@@ -33,3 +33,37 @@ exports.addParameterToURL=(url, param, value)=>{
     else url += (url.split('?')[1] ? '&':'?') + param + "=" +value;
     return url;
 }
+
+exports.calculateTime= (time)=>{
+    const t1 = Date.parse(time);
+    const timeNow = new Date(Date.now());
+    const t2 = Date.parse(timeNow);
+    const diff= Math.ceil((t2-t1)/1000)
+    let result="";
+
+    if(diff>365*24*3600){
+        result+=new Date(time).toLocaleDateString();
+    }
+    else if(diff>30*24*3600){
+        result+=Math.floor(diff/(30*24*3600)) + " tháng trước";
+    }
+    else if(diff>24*3600){
+        result+=Math.floor(diff/(24*3600)) + " ngày trước";
+    }
+    else if(diff>3600){
+        result+=Math.floor(diff/(3600)) + " giờ trước";
+    }
+    else if(diff>60){
+        result+=Math.floor(diff/(60)) + " phút trước";
+    }
+    else{
+        result+="Gần đây";
+    }
+    return result;
+}
+
+const formatTime = (time)=>{    
+    let result="";
+    result=time.getDate()+"-"+ time.getMonth()+ "-" + time.getYear();
+    return result;
+}

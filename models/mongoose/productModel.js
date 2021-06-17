@@ -1,5 +1,6 @@
 const mongoose= require('mongoose');
 const mongoosePaginate = require('mongoose-paginate-v2');
+// const mongooseLeanVirtuals = require('mongoose-lean-virtuals');
 const Schema = mongoose.Schema();
 
 console.log("model.js");
@@ -55,11 +56,20 @@ productSchema.virtual('fdiscountprice').get(function() {
 });
 
 productSchema.virtual('discount').get(function() {
-    return this.baseprice-this.discountprice; 
+    return Math.ceil((this.baseprice-this.discountprice)*100/this.baseprice); 
 });
 
+// productSchema.virtual('ram').get(function(){
+//     let result;
+//     if(this.storage!="None"){
+//         result= this.storage.substring(0,this.storage.search(/[a-b]/i)-1);
+//     }
+//     else result = "0";
+//     return +result;
+// })
 
 
 productSchema.plugin(mongoosePaginate);
+// productSchema.plugin(mongooseLeanVirtuals);
 
 module.exports = mongoose.model('allmobiles', productSchema )

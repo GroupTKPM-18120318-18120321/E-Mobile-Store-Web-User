@@ -64,16 +64,12 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						<i class="fas fa-shopping-cart ml-1"></i>
 					</p>
 				</div>
-				<div class="col-lg-8 header-right mt-lg-0 mt-2">
+				<div class="col-lg-8 header-right mt-lg-0 mt-2 text-right">
 					<!-- header lists -->
 					<ul>
 						<li class="text-center border-right text-white">
-							<a class="play-icon popup-with-zoom-anim text-white" href="#small-dialog1">
-								<i class="fas fa-map-marker mr-2"></i>Select Location</a>
-						</li>
-						<li class="text-center border-right text-white">
 							<a href="#" data-toggle="modal" data-target="#exampleModal" class="text-white">
-								<i class="fas fa-truck mr-2"></i>Track Order</a>
+								<i class="fas fa-truck mr-2"></i>Vận chuyển</a>
 						</li>
 						<li class="text-center border-right text-white">
 							<i class="fas fa-phone mr-2"></i> 001 234 5678
@@ -85,24 +81,25 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						</li> --}}
 
 						<li class="text-center border-right text-white">
-							<a class="text-white nav-link" href="#" role="button" data-toggle="dropdown"
-								>
+							<a class="text-white nav-link" href="#" role="button" data-toggle="dropdown">
 								<i class="fas fa-user-circle"></i> Tài khoản </a>
 							</a>
 							<div class="dropdown-menu">
-								<p class="dropdown-item"><b>Hello {{user.name}}!</b></p>
-								<a class="dropdown-item" href="/users/edit/{{user._id}}">Profile</a>
-								<a class="dropdown-item" href="/users/logout">Log out</a>
+								<p class="dropdown-item"><b>Xin chào {{user.name}}!!!</b></p>
+								<a class="dropdown-item" href="/my-account/{{user._id}}">
+									<i class="fas fa-user"></i> Hồ sơ cá nhân</a>
+								<a class="dropdown-item" href="/users/logout">
+									<i class="fas fa-sign-out-alt"></i> Đăng xuất</a>
 							</div>
 						</li>
 						{{else}}
 						<li class="text-center border-right text-white">
 							<a href="/users/login" class="text-white">
-								<i class="fas fa-sign-in-alt mr-2"></i> Log In </a>
+								<i class="fas fa-sign-in-alt mr-2"></i> Đăng nhập</a>
 						</li>
 						<li class="text-center text-white">
 							<a href="/users/register" class="text-white">
-								<i class="fa fa-user-plus" aria-hidden="true"></i> Register </a>
+								<i class="fa fa-user-plus" aria-hidden="true"></i> Đăng ký </a>
 						</li>
 						{{/if}}
 					</ul>
@@ -518,26 +515,20 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						<!-- search -->
 						<div class="col-10 agileits_search">
 							<form class="form-inline" action="/mobilephonesbrands/" method="GET">
-								<input  name="nameProduct" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" value={{_sections.searchValue}}>
-								<button class="btn my-2 my-sm-0" type="submit">Search</button>
+								<input  name="nameProduct" class="form-control mr-sm-2" type="Search" placeholder="Nhập nội dung tìm kiếm" aria-label="Search" value={{_sections.searchValue}}>
+								<button class="btn my-2 my-sm-0" type="submit">Tìm kiếm</button>
 							</form>
 						</div>
 						<!-- //search -->
 						<!-- cart details -->
-						<div class="col-2 top_nav_right text-center ">
-							<div class="wthreecartaits wthreecartaits2 cart cart box_1">
-								<form action="/cart" method="get">
-									<button class="btn btn-primary my-2 my-sm-0" type="submit">
-											<i class="fas fa-cart-arrow-down"></i>
-											<span id="numbercart">{{numberProduct}}</span>
-											<script type="text/x-handlebars-template" id="templateNumProduct"></script>
-									</button>
-									
-								</form>
+						<div class="col-2 pt-1 top_nav_right text-center ">
+							<form action="/payment/cart" method="get">
 								
-									
-								
-							</div>
+								<button class="btn btn-primary my-2 py-2 my-sm-0" type="submit">
+									<i class="fas fa-cart-arrow-down"></i>
+									{{!-- <span id="numbercart"></span> --}}
+								</button>
+							</form>
 						</div>
 						<!-- //cart details -->
 					</div>
@@ -551,7 +542,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	<div class="navbar-inner">
 		<div class="container">
 			<nav class="navbar navbar-expand-lg navbar-light bg-light">
-				<div class="agileits-navi_search">
+				{{!-- <div class="agileits-navi_search">
 					<form action="#" method="post">
 						<select id="agileinfo-nav_search" name="agileinfo_search" class="border" required="">
 							<option value="">All Categories</option>
@@ -564,7 +555,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 							<option value="Itel">Itel</option>
 						</select>
 					</form>
-				</div>
+				</div> --}}
 				<button class="navbar-toggler" type="button" data-toggle="collapse"
 					data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
 					aria-label="Toggle navigation">
@@ -635,22 +626,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						{{!-- <li class="nav-item mr-lg-2 mb-lg-0 mb-2">
 							<a class="nav-link" href="product.html">New Arrivals</a>
 						</li> --}}
-						<li class="nav-item dropdown mr-lg-2 mb-lg-0 mb-2">
-							<a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown"
-								aria-haspopup="true" aria-expanded="false">
-								Pages
-							</a>
-							<div class="dropdown-menu">
-								{{!-- <a class="dropdown-item" href="product.html">Product 1</a>
-								<a class="dropdown-item" href="product2.html">Product 2</a>
-								<div class="dropdown-divider"></div>
-								<a class="dropdown-item" href="single.html">Single Product 1</a>
-								<a class="dropdown-item" href="single2.html">Single Product 2</a>
-								<div class="dropdown-divider"></div> --}}
-								<a class="dropdown-item" href="/pages/checkout">Checkout Page</a>
-								<a class="dropdown-item" href="/pages/payment">Payment Page</a>
-							</div>
-						</li>
+						
 						<li class="nav-item">
 							<a class="nav-link" href="/contact">Contact Us</a>
 						</li>
@@ -683,7 +659,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 								<span>Big</span>
 								Sale
 							</h3>
-							<a class="button2" href="product.html">Shop Now </a>
+							<a class="button2" href="/mobilephonesbrands/all">Mua ngay </a>
 						</div>
 					</div>
 				</div>
@@ -698,7 +674,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 							<h3 class="font-weight-bold pt-2 pb-lg-5 pb-4">Best
 								<span>Smartphone</span>
 							</h3>
-							<a class="button2" href="product.html">Shop Now </a>
+							<a class="button2" href="/mobilephonesbrands/all">Mua ngay</a>
 						</div>
 					</div>
 				</div>
@@ -713,7 +689,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 							<h3 class="font-weight-bold pt-2 pb-lg-5 pb-4">New
 								<span>Standard</span>
 							</h3>
-							<a class="button2" href="product.html">Shop Now </a>
+							<a class="button2" href="/mobilephonesbrands/all">Mua ngay </a>
 						</div>
 					</div>
 				</div>
@@ -728,7 +704,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 							<h3 class="font-weight-bold pt-2 pb-lg-5 pb-4">Today
 								<span>Discount</span>
 							</h3>
-							<a class="button2" href="product.html">Shop Now </a>
+							<a class="button2" href="/mobilephonesbrands/all">Mua ngay </a>
 						</div>
 					</div>
 				</div>
@@ -806,8 +782,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 								<i class="fas fa-dolly"></i>
 							</div>
 							<div class="col-8 text-form-footer">
-								<h3>Free Shipping</h3>
-								<p>on orders over $100</p>
+								<h3>Free Ship</h3>
+								<p>Với Đơn Hàng Trên 2 triệu</p>
 							</div>
 						</div>
 					</div>
@@ -817,8 +793,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 								<i class="fas fa-shipping-fast"></i>
 							</div>
 							<div class="col-8 text-form-footer">
-								<h3>Fast Delivery</h3>
-								<p>World Wide</p>
+								<h3>Nhanh Chóng</h3>
+								<p>Tổ Quốc</p>
 							</div>
 						</div>
 					</div>
@@ -828,8 +804,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 								<i class="far fa-thumbs-up"></i>
 							</div>
 							<div class="col-8 text-form-footer">
-								<h3>Big Choice</h3>
-								<p>of Products</p>
+								<h3>Hàng Đầu</h3>
+								<p>Về Chất Lượng</p>
 							</div>
 						</div>
 					</div>
@@ -868,54 +844,54 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					<!-- //footer categories -->
 					<!-- quick links -->
 					<div class="col-md-3 col-sm-6 footer-grids mt-sm-0 mt-4">
-						<h3 class="text-white font-weight-bold mb-3">Quick Links</h3>
+						<h3 class="text-white font-weight-bold mb-3">Danh Mục</h3>
 						<ul>
 							<li class="mb-3">
-								<a href="/about">About Us</a>
+								<a href="/about">Giới Thiệu</a>
 							</li>
+					
 							<li class="mb-3">
-								<a href="/contact">Contact Us</a>
+								<a href="help.html">Hỗ Trợ</a>
 							</li>
+	
 							<li class="mb-3">
-								<a href="help.html">Help</a>
-							</li>
-							<li class="mb-3">
-								<a href="faqs.html">Faqs</a>
-							</li>
-							<li class="mb-3">
-								<a href="terms.html">Terms of use</a>
+								<a href="terms.html">Điều Khoản</a>
 							</li>
 							<li>
-								<a href="privacy.html">Privacy Policy</a>
+								<a href="privacy.html">Chính Sách</a>
 							</li>
 						</ul>
 					</div>
 					<div class="col-md-3 col-sm-6 footer-grids mt-md-0 mt-4">
-						<h3 class="text-white font-weight-bold mb-3">Get in Touch</h3>
+						<h3 class="text-white font-weight-bold mb-3">Thông Tin Liên Lạc</h3>
 						<ul>
 							<li class="mb-3">
-								<i class="fas fa-map-marker"></i> 123 Sebastian, USA.
+								<i class="fas fa-map-marker"></i> KTX Khu B, ĐHQG TP HCM.
 							</li>
 							<li class="mb-3">
-								<i class="fas fa-mobile"></i> 333 222 3333
+								<i class="fas fa-mobile"></i> 0986059068
 							</li>
-							<li class="mb-3">
+							{{!-- <li class="mb-3">
 								<i class="fas fa-phone"></i> +222 11 4444
+							</li> --}}
+							<li class="mb-3">
+								<i class="fas fa-envelope-open"></i>
+								<a href="mailto:example@mail.com"> lyhandong123@gmail.com</a>
 							</li>
 							<li class="mb-3">
 								<i class="fas fa-envelope-open"></i>
-								<a href="mailto:example@mail.com"> mail 1@example.com</a>
+								<a href="mailto:example@mail.com"> huynhduc0403@gmail.com</a>
 							</li>
 							<li>
 								<i class="fas fa-envelope-open"></i>
-								<a href="mailto:example@mail.com"> mail 2@example.com</a>
+								<a href="mailto:example@mail.com"> ducluuthien@gmail.com</a>
 							</li>
 						</ul>
 					</div>
 					<div class="col-md-3 col-sm-6 footer-grids w3l-agileits mt-md-0 mt-4">
 						<!-- newsletter -->
-						<h3 class="text-white font-weight-bold mb-3">Newsletter</h3>
-						<p class="mb-4">Free Delivery on your first order!</p>
+						<h3 class="text-white font-weight-bold mb-3">Bản Tin</h3>
+						<p class="mb-4">Giao Hàng Miễn Phí Cho Đơn Hàng Đầu Tiên Của Bạn!</p>
 						<form action="#" method="post">
 							<div class="form-group">
 								<input type="email" class="form-control" placeholder="Email" name="email" >
@@ -929,12 +905,12 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					<div class="col-md-3 col-sm-6 footer-grids w3l-agileits mt-md-0 mt-4">
 						<!-- social icons -->
 
-						<h3 class="text-white font-weight-bold mb-3">Follow Us on</h3>
+						<h3 class="text-white font-weight-bold mb-3">Kết Nối Với Chúng Tôi</h3>
 						<div class="social">
 							<div class="footer-grids  w3l-socialmk mt-3">
 								<ul>
 									<li>
-										<a class="icon fb" href="#">
+										<a class="icon fb" href="https://www.facebook.com/dong.lyhan/">
 											<i class="fab fa-facebook-f"></i>
 										</a>
 									</li>
@@ -961,7 +937,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		</div>
 		<!-- //footer third section -->
 		<!-- footer fourth section -->
-		<div class="agile-sometext py-md-5 py-sm-4 py-3">
+		{{!-- <div class="agile-sometext py-md-5 py-sm-4 py-3">
 			<div class="container">
 				<!-- brands -->
 				<div class="sub-some">
@@ -1170,7 +1146,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 							<a href="product2.html" class="border-right pr-2">Sandwich Makers</a>
 						</li>
 					</ul>
-				</div> --}}
+				</div>
 				<!-- //brands -->
 				<!-- payment -->
 				<div class="sub-some child-momu mt-4">
@@ -1207,7 +1183,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				</div>
 				<!-- //payment -->
 			</div>
-		</div>
+		</div> --}}
 		<!-- //footer fourth section (text) -->
 	</footer>
 	<!-- //footer -->

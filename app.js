@@ -18,16 +18,15 @@ const nodemailer = require('./models/service/nodemailerService');
 const connectDB = require('./data/db');
 const indexRouter = require('./routes/index');
 const brandsRouter = require('./routes/mobilephonesbrands');
-const pagesRouter = require('./routes/pages');
+const paymentRouter = require('./routes/payment');
 const usersRouter = require('./routes/users');
 const authRouter = require('./routes/auth');
 const mailerRouter = require('./routes/mailer');
+const userAccountRouter = require('./routes/userAccount');
 
 
 //var usersRouter =  require('./routes/users');
 //var usersRouter = require('./routes/users');
-
-
 
 //var productsRouter = require('./routes/product'); //import den file js routing
 
@@ -107,8 +106,9 @@ app.use(cookieParser('MY SECRET'));
 app.use(express.static(path.join(__dirname, 'public')));
 
 // passport middleware
+app.set('trust proxy',1);
 app.use(session({
-  resave: true,
+  resave: false,
   saveUninitialized: true,
   secret: 'keyboard cat'
 }));
@@ -126,10 +126,11 @@ app.use(function (req, res, next) {
 
 app.use('/', indexRouter);
 app.use('/mobilephonesbrands', brandsRouter);
-app.use('/pages', pagesRouter);
+app.use('/payment', paymentRouter);
 app.use('/users', usersRouter);
 app.use('/auth', authRouter);
 app.use('/mail', mailerRouter);
+app.use('/my-account', userAccountRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

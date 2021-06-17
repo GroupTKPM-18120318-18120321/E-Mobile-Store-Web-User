@@ -95,6 +95,7 @@ exports.checkUser = async (username, password) => {
     }
     let checkPassword = await bcrypt.compare(password, user.password);
     if (checkPassword) {
+        
         return user;
     }
 

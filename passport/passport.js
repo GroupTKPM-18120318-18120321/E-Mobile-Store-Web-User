@@ -14,6 +14,9 @@ passport.use(new LocalStrategy(
         if (!user) {
             return done(null, false, { message: 'Tên đăng nhập hoặc mật khẩu nhập sai!!!!' });
         }
+        if (user.accountState === 1) {
+            return done(null, false, { message: 'Tài khoản của bạn đã bị khóa!!!!' });
+        }
 
         return done(null, user);
     }
@@ -33,7 +36,7 @@ passport.deserializeUser(function (id, done) {
 passport.use(new GoogleStrategy({
     clientID: configAuth.googleAuth.clientID,
     clientSecret: configAuth.googleAuth.clientSecret,
-    callbackURL: configAuth.googleAuth.callbackURL,
+    callbackURL:'http://store-user-web.herokuapp.com/auth/google/callback',
 },
     function (token, refreshToken, profile, done) {
         process.nextTick(async function () {
@@ -52,8 +55,12 @@ passport.use(new GoogleStrategy({
 
             
             if (user) {
+               
                 if(user.id)
                 {
+                    if (user.accountState === 1) {
+                        return done(null, false, { message: 'Tài khoản của bạn đã bị khóa!!!!' });
+                    }
                     return done(null, user);
                 }
                 else
@@ -70,6 +77,7 @@ passport.use(new GoogleStrategy({
                     name: profile.displayName,
                     email: profile.emails[0].value,
                     avatar: 'http://ssl.gstatic.com/accounts/ui/avatar_2x.png',
+                    role: Object("5fe9b7b8ea0d1f18102eed2f")
                 };
                 var newUser = new User(newPostData);
                 // set all of the relevant information

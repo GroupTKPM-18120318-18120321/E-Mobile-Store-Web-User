@@ -1,7 +1,7 @@
 const mongoose=require("mongoose");
 require('dotenv').config()
 
-const uri = process.env.PRODUCTS_MONGODB_URL;
+const uri = 'mongodb+srv://hexad:%23Dd18212227@cluster0.ecnii.mongodb.net/StoreManager?retryWrites=true&w=majority';
 
 const connectDB = async()=>{
     try {

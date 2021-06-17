@@ -35,22 +35,14 @@
 				<p class="mb-3">
 					<span class="item_price"><b>{{detail.fdiscountprice}}đ</b></span>
 					<del class="mx-2 font-weight-light">{{detail.fbaseprice}}đ</del>
-					<label class="text-primary">Free delivery</label>
+					<label class="text-primary">Free shipping</label>
 				</p>
 				<div class="single-infoagile">
 					<ul>
-						<li class="mb-3">
-							Cash on Delivery Eligible.
-						</li>
-						<li class="mb-3">
-							Shipping Speed to Delivery.
-						</li>
-						<li class="mb-3">
-							EMIs from $655/month.
-						</li>
-						<li class="mb-3">
-							Bank OfferExtra 5% off with Axis Bank Buzz Credit CardT&C
-						</li>
+						<li class="mb-3">Bảo hành chính hãng 12 tháng.</li>
+						<li class="mb-3">Giao hàng tiện lơi, nhanh chóng.</li>
+						<li class="mb-3">Mua trả góp với lãi suất 0%.</li>
+						<li class="mb-3">Đổi mới trong 1 tháng đầu nếu lỗi từ nhà sản xuất.</li>
 					</ul>
 				</div>
 				<div class="product-single-w3l">
@@ -86,7 +78,7 @@
 					</table>
 					<p class="my-3">
 						<i class="far fa-hand-point-right mr-2"></i>
-						<label>1 Year </label>Manufacturer Warranty
+						<label>Bảo hành chính hãng lên tới 12 tháng</label> 
 					</p>
 					<p class="my-sm-4 my-3">
 						<i class="fas fa-retweet mr-3"></i>Net banking & Credit/ Debit/ ATM card
@@ -95,18 +87,7 @@
 				<div class="occasion-cart">
 					<div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out">
 						<form action="#" method="post">
-							<fieldset>
-								<input type="hidden" name="cmd" value="_cart" />
-								<input type="hidden" name="add" value="1" />
-								<input type="hidden" name="business" value=" " />
-								<input type="hidden" name="item_name" value="Samsung Galaxy J7 Prime" />
-								<input type="hidden" name="amount" value="200.00" />
-								<input type="hidden" name="discount_amount" value="1.00" />
-								<input type="hidden" name="currency_code" value="USD" />
-								<input type="hidden" name="return" value=" " />
-								<input type="hidden" name="cancel_return" value=" " />
-								<input type="submit" name="submit" value="Add to cart" class="button" />
-							</fieldset>
+							<input class="button btn" type="button" onclick="addToCart('{{_id}}')" value="Thêm vào giỏ hàng" >
 						</form>
 					</div>
 				</div>
@@ -119,14 +100,39 @@
 			<div class="d-flex justify-content-left row">
 				<div class="d-flex flex-column col-md-8">
 					<div class="coment-bottom bg-white p-2 px-4">
-						<div class="d-flex flex-row add-comment-section mt-4 mb-4">
+						<h4 class="mb-2">Bình Luận</h4>
+						{{!-- <div class="d-flex flex-row add-comment-section mt-4 mb-4">
 							<img class="img-fluid img-responsive rounded-circle mr-2"
 								src="https://i.imgur.com/KLeobJk.jpg" width="38">
 
 							<input type="text" class="form-control mr-3" id="inpTxtComment" name="inpTxtComment"
 								placeholder="Add comment">
 							<button class="btn btn-primary" type="button" onclick="postComment()" >Comment</button>
+						</div> --}}
+						<div class="d-flex flex-column add-comment-section">
+							<div class="form-row my-1">
+								{{#if user}}
+									<input type="hidden" class="form-control mb-3" id="inpTxtName" name="inpTxtName"
+									placeholder="Nhập tên" value="{{user.name}}">
+									<input type="hidden" class="form-control mb-3" id="inpAvatar" name="inpAvatar"
+									placeholder="Nhập tên" value="{{user.avatar}}">
+								{{else}}
+									<input type="text" class="form-control mb-3" id="inpTxtName" name="inpTxtName"
+									placeholder="Nhập tên">
+									<input type="hidden" class="form-control mb-3" id="inpAvatar" name="inpAvatar"
+									placeholder="Nhập tên" value="{{user.avatar}}">
+								{{/if}}
+							</div>
+							<div class="form-row my-1">	
+								<textarea class="form-control" id="inpTxtComment" name="inpTxtComment" placeholder="Nhập bình luận" rows="4"></textarea>
+							</div>
+								
+							<div class="ml-auto">
+								<button class="btn btn-primary py-2 px-4 my-3" type="button" onclick="postComment()" >Gửi</button>
+							</div>
 						</div>
+						
+
 						<div class="collapsable-comment">
 							<div class="d-flex flex-row justify-content-between align-items-center action-collapse py-2"
 								data-toggle="collapse" aria-expanded="false" aria-controls="collapse-1"
@@ -149,48 +155,7 @@
 									</div>
 									<div class="ml-5 comment-text-sm"><span>{{content}}</span></div>
 								</div>
-								<div class="ml-5 reply-section">
-									<div class="d-flex flex-row align-items-center voting-icons">
-										<div class="my-2 collapsable-comment">
-
-											{{!-- Phản hồi --}}
-											<div data-toggle="collapse" aria-expanded="false"
-												aria-controls="child{{_id}}" href="#child{{_id}}">
-												<span class="text-primary" style="cursor:pointer">
-													<i class="fa fa-reply mr-2" aria-hidden="true "></i>Phản hồi</span>
-											</div>
-											<div id="child{{_id}}" class="collapse">
-												<div class="d-flex flex-row add-comment-section my-2">
-													<img class="img-fluid img-responsive rounded-circle mr-2"
-														src="https://i.imgur.com/KLeobJk.jpg" width="38">
-
-													<input type="text" class="form-control mr-3" id="inpTxtChild{{_id}}"
-														name="inpTxtChildComment" placeholder="Add comment">
-
-													<button class="btn btn-primary" type="button"
-														onclick="postChildComment('{{_id}}')" >Comment</button>
-												</div>
-											</div>
-											{{!-- //Phản hồi --}}
-
-											{{!-- Xem thêm --}}
-											{{#if numChild}}
-											<div data-toggle="collapse" aria-expanded="false" aria-controls="{{_id}}"
-												href="#{{_id}}">
-												<span class="text-primary" style="cursor:pointer" onclick="loadChildComment('{{_id}}')">
-													<i class="fa fa-chevron-down mr-2" aria-hidden="true"></i>Xem
-													thêm {{numChild}} phản hồi</span>
-											</div>
-
-											<div id="{{_id}}" class="collapse">
-												
-											</div>
-											{{/if}}
-											{{!-- Xem thêm --}}
-
-										</div>
-									</div>
-								</div>
+								
 								{{/each}}
 
 								{{!-- pagination --}}
@@ -273,6 +238,7 @@
 
 </div>
 
+{{!-- Sript template list child comment  --}}
 <script type="text/x-handlebars-template" id="templateChildComment">
 	\{{#each listChildComment}}
 		<div class="commented-section mt-2">
@@ -289,6 +255,9 @@
 	\{{/each}}
 	
 </script>
+{{!-- //Sript template list child comment  --}}
+
+{{!-- Script template list comment --}}
 <script type="text/x-handlebars-template" id="templateComment">
 	\{{#each listComment}}
 	<div class="commented-section mt-2">
@@ -301,54 +270,6 @@
 			<span class="ml-2 text-secondary">\{{time}}</span>
 		</div>
 		<div class="ml-5 comment-text-sm"><span>\{{content}}</span></div>
-	</div>
-	<div class="ml-5 reply-section">
-		<div class="d-flex flex-row align-items-center voting-icons">
-			<div class="my-2 collapsable-comment">
-				{{!-- Phản hồi --}}
-				<div data-toggle="collapse" aria-expanded="false" aria-controls="child\{{_id}}"
-					href="#child\{{_id}}">
-					<span class="text-primary" style="cursor:pointer">
-						<i class="fa fa-reply mr-2" aria-hidden="true "></i>Phản hồi</span>
-				</div>
-				<div id="child\{{_id}}" class="collapse">
-					<div class="d-flex flex-row add-comment-section my-2">
-						<img class="img-fluid img-responsive rounded-circle mr-2"
-							src="https://i.imgur.com/KLeobJk.jpg" width="38">
-
-						<input type="text" class="form-control mr-3" id="inpTxtChild\{{_id}}"
-							name="inpTxtChildComment" placeholder="Add comment">
-				
-						<button class="btn btn-primary" type="button"
-							onclick="postChildComment('\{{_id}}')" >Comment</button>
-					</div>
-				</div>
-				{{!-- //Phản hồi --}}
-
-				{{!-- Xem thêm --}}
-				\{{#if numChild}}
-				<div data-toggle="collapse" aria-expanded="false" aria-controls="\{{_id}}"
-					href="#\{{_id}}">
-					<span class="text-primary" style="cursor:pointer" onclick="loadChildComment('\{{_id}}')">
-						<i class="fa fa-chevron-down mr-2" aria-hidden="true"></i>Xem thêm \{{numChild}} phản hồi</span>
-				</div>
-				<div id="\{{_id}}" class="collapse">
-					<div class="commented-section mt-2">
-						<div class="d-flex flex-row align-items-center commented-user">
-							<img class="img-fluid img-responsive rounded-circle mr-2"
-								src="https://i.imgur.com/KLeobJk.jpg" width="38">
-							<h5 class="mb-1 mr-2">Corey oates</h5><span
-								class="dot"></span><span class="ml-2">4 hours ago</span>
-						</div>
-						<div class="ml-5 comment-text-sm">
-							<span>Lorem ipsum dolor sit amet.</span>
-						</div>
-					</div>
-				</div>
-				\{{/if}}
-				{{!-- Xem thêm --}}
-			</div>
-		</div>
 	</div>
 	\{{/each}}
 
@@ -395,3 +316,4 @@
 	\{{/if}}
 	{{!-- //pagination --}}		
 </script>
+{{!-- //Script template list comment --}}

@@ -4,8 +4,8 @@ const Schema = mongoose.Schema();
 console.log("model.js");
 //Tạo model
 const userSchema = mongoose.Schema({
-    name: {type: String, require: true},
-    userName: {type: String, require: true},
+    name: {type: String, require: true},//Tên đăng nhập
+    userName: {type: String, require: true},//Họ tên
     password: {type: String, require: true},
     email: {type: String, require: true},
     phoneNumber: {type: String, require: true},  

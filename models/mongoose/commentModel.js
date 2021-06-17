@@ -1,6 +1,7 @@
 const mongoose= require('mongoose');
 const Schema = mongoose.Schema();
 const mongoosePaginate = require('mongoose-paginate-v2');
+// const mongooseLeanVirtuals = require('mongoose-lean-virtuals');
 
 //Tạo model
 const commentSchema = mongoose.Schema({
@@ -50,5 +51,6 @@ commentSchema.virtual('time').get(function() {
 });
 
 commentSchema.plugin(mongoosePaginate);
+// commentSchema.plugin(mongooseLeanVirtuals);
 
 module.exports = mongoose.model('Comment', commentSchema, "Comment" )
