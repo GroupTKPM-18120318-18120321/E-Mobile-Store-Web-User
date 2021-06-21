@@ -6,8 +6,8 @@ exports.displayInfo = async(req, res, next) => {
     const foundAcc = await Account.findOne ({ id: req.params.id});
     const idUser=req.params.id;
     const listOrder = await orderService.getListOrder({_id:idUser});
-    console.log("AAAAAAAÂ");
-    console.log(listOrder);
+    //console.log("AAAAAAAÂ");
+    //console.log(listOrder);
 
     if(req.user)
     {
