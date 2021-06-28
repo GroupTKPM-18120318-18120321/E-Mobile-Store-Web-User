@@ -17,8 +17,8 @@ exports.displayAccInfo = async (req, res, next) => {
 
     const idUser=req.params.id;
     const listOrder = await orderService.getListOrder({idCustomer:idUser});
-    console.log("AAAAAAAÂ");
-    console.log(listOrder);
+    //console.log("AAAAAAAÂ");
+    //console.log(listOrder);
 
     res.render('account/userProfile', {accountInfo, 
         genderSelector, 
