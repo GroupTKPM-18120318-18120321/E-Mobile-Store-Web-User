@@ -6,7 +6,7 @@ const GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
 const userSevice = require('../models/service/userService');
 const configAuth = require('./authgoogle');
 const User = require('../models/mongoose/userModel');
-
+const regulationsService = require('../models/service/regulationsService');
 
 passport.use(new LocalStrategy(
     async function (username, password, done) {
@@ -15,7 +15,20 @@ passport.use(new LocalStrategy(
             return done(null, false, { message: 'Tên đăng nhập hoặc mật khẩu nhập sai!!!!' });
         }
         if (user.accountState === 1) {
-            return done(null, false, { message: 'Tài khoản của bạn đã bị khóa!!!!' });
+            //Ap dung quy dinh ve thoi gian khoa tai khoan
+            const listParameters = await regulationsService.getListParameters();
+
+            for (let i = 0; i < listParameters.length; i++) {
+                if (listParameters[i].id === "60c4dbc38883d632fcc11a07") {
+                    if (listParameters[i].state) {
+                        if (!(await userService.checkUnlockDate(user._id, user.lockDate))) {
+                            return done(null, false, { message: 'Tài khoản bạn đã bị khóa!' });
+                        } else return done(null, user);
+                    } else {
+                        return done(null, false, { message: 'Tài khoản bạn đã bị khóa!' });
+                    }
+                }
+            }
         }
 
         return done(null, user);
@@ -36,7 +49,7 @@ passport.deserializeUser(function (id, done) {
 passport.use(new GoogleStrategy({
     clientID: configAuth.googleAuth.clientID,
     clientSecret: configAuth.googleAuth.clientSecret,
-    callbackURL:'http://localhost:3000/auth/google/callback',
+    callbackURL: configAuth.googleAuth.callbackURL,
 },
     function (token, refreshToken, profile, done) {
         process.nextTick(async function () {
@@ -59,7 +72,20 @@ passport.use(new GoogleStrategy({
                 if(user.id)
                 {
                     if (user.accountState === 1) {
-                        return done(null, false, { message: 'Tài khoản của bạn đã bị khóa!!!!' });
+                        //Ap dung quy dinh ve thoi gian khoa tai khoan
+                        const listParameters = await regulationsService.getListParameters();
+
+                        for (let i = 0; i < listParameters.length; i++) {
+                            if (listParameters[i].id === "60c4dbc38883d632fcc11a07") {
+                                if (listParameters[i].state) {
+                                    if (!(await userService.checkUnlockDate(user._id, user.lockDate))) {
+                                        return done(null, false, { message: 'Tài khoản bạn đã bị khóa!' });
+                                    } else return done(null, user);
+                                } else {
+                                    return done(null, false, { message: 'Tài khoản bạn đã bị khóa!' });
+                                }
+                            }
+                        }
                     }
                     return done(null, user);
                 }

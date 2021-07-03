@@ -10,7 +10,7 @@ const orderSchema = mongoose.Schema({
     subDistrict: {type:String},
     district: {type: String},
     city:{type: String},
-
+    deliveryCharge: {type: Number},
     paymentMethod: {type: String},
     orderStatus: {type: mongoose.Schema.Types.ObjectId},
     idCustomer:{type: mongoose.Schema.Types.ObjectId},

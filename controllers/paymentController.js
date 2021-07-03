@@ -29,10 +29,15 @@ exports.checkout = async (req, res, next) => {
         numProduct += 1;
     }
 
+    const deliveryCharge = await orderService.calcDeliveryCharge(totalPrice);
+    totalPrice += deliveryCharge;
+
     res.render('home/checkout', {
         numProduct: numProduct,
         totalPrice: handle.formatCurrency(totalPrice),
-        listProduct: listProduct
+        listProduct: listProduct,
+        deliveryCharge: deliveryCharge,
+        fdeliveryCharge: handle.formatCurrency(deliveryCharge)
     });
 };
 
@@ -41,8 +46,9 @@ exports.payment = async (req, res, next) => {
     const sessionId = req.signedCookies.cartSession;
 
     const cart = await cartService.cart(sessionId);
+    const deliveryDate = await orderService.calcDeliveryDate(new Date());
 
-    //console.log(req.body);
+    console.log(req.body);
     //Tạo hóa đơn
     const object = {
         orderDate: new Date(),
@@ -50,11 +56,12 @@ exports.payment = async (req, res, next) => {
         subDistrict: req.body.subDistrict,
         district: req.body.district,
         city: req.body.city,
-
         idCustomer: req.user._id,
         phone: req.body.phoneNumber,
         paymentMethod: req.body.paymentMethod,
         orderStatus: "5fef361f5a75811ec4f91033",
+        deliveryCharge: Number(req.body.deliveryCharge),
+        deliveryDate: deliveryDate,
     }
     const idOrder = await orderService.addOrder(object);
 
@@ -74,6 +81,9 @@ exports.payment = async (req, res, next) => {
         totalPrice += product.total;
         numProduct += 1;
     }
+
+    //Thêm phí giao hàng vào tổng tiền hóa đơn
+    totalPrice += Number(req.body.deliveryCharge);
 
     //Cập nhập tổng tiền hóa đơn
     await orderService.updateOrder({ _id: idOrder }, { total: totalPrice });

@@ -134,3 +134,14 @@ exports.setTemporaryAccount = (req, res, next) => {
     accountdata = "abc";
 }
 
+exports.checkUnlockDate = async (_id, lockDate) => {
+    const nowDate = new Date();
+    const val = await parameterModel.parameterModel.findById("60c4dbc38883d632fcc11a07");
+
+    if (nowDate.getTime() >= (lockDate.getTime() + val * 24 * 60 * 60 * 1000)) {
+        await accountModel.findByIdAndUpdate(_id, {accountState: 0});
+        return true;
+    }
+    return false;
+}
+
