@@ -137,7 +137,10 @@ exports.cart = async (req, res, next) => {
 exports.addtoCart = async (req, res, next) => {
     const sessionId = req.signedCookies.cartSession;
     const idProduct = req.query.idProduct;
-
+    
+    //console.log(req.body);
+    //console.log(sessionId);
+    //console.log(idProduct);
     await cartService.pushProduct(sessionId, idProduct);
 
     const cart = await cartService.cart(sessionId);

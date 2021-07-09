@@ -739,7 +739,10 @@ h3.tittle-w3l span {
     background: rgba(0, 0, 0, 0.56);
     color: #fff;
 }
-
+.link-product-detail:hover {
+    background: rgba(0, 0, 0, 0.56);
+    color: #fff;
+}
 /*-- //effect on products --*/
 
 /*-- product left --*/

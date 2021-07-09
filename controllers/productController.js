@@ -13,6 +13,8 @@ exports.product = async(req, res, next) => {
     const highLightProduct = await productService.findHighlightsProduct(3);
     const offerProduct= await productService.findOfferProduct(3);
 
+    console.log(newProduct[1]);
+    
     //console.log(product);
     console.log("req.protocol");
     console.log(req.get('Host'));
@@ -91,16 +93,21 @@ exports.brands = async (req, res, next) => {
 };
 
 exports.detail = async (req, res, next) => {
+    console.log("DG");
     const idProduct = req.params.idProduct;
 
+    console.log(idProduct);
     //Tim dien thoai 
     const detail = await productService.findOneProduct({_id:idProduct});
+
+    console.log(detail);
+    console.log(idProduct);
     await productService.increaseView({_id:idProduct},detail.trackNum);
     
     //Tìm những sản phẩm liên quan
     const similarProduct = await productService.findSimilarProduct({_id:idProduct});
 
-
+    console.log("haha")
     const page= +req.query.page || 1;;
     const limit=10;
     //Tìm những comment
@@ -122,8 +129,8 @@ exports.detail = async (req, res, next) => {
         pageItem.push(items);
         start+=1;
     }
-    
-    
+   
+    console.log(detail);
     res.render('home/detail',
                         {detail,
                         listComment: listComment.docs,
