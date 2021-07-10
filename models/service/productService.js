@@ -144,7 +144,9 @@ exports.findHighlightsProduct = async (numProduct) => {
 exports.findSimilarProduct = async (filter) => {
     const numProduct = 4;
     const diff = 1000000;
+
     const product = await datamongoose.findOne(filter);
+    console.log(product);
     // const similarProduct = await datamongoose.find({
     //     _id: { $ne: product._id },
     //     $or: [{ 'idmanufacturer': product.idmanufacturer },
@@ -174,11 +176,21 @@ exports.findSimilarProduct = async (filter) => {
     // console.log(listIdOrder);
     // console.log("ket thuc")
 
+    console.log("a");
+    console.log(listIdOrder.length);
     // Tim san pham nam trong list IdOrder khac san pham dang xem
-    const similarProduct = await detailOrderModel.distinct("idProduct", {
-        idProduct: { $ne: product._id },
-        $or: listIdOrder
-    })
+    let similarProduct;
+    var result; 
+    if(listIdOrder.length != 0){
+        similarProduct = await detailOrderModel.distinct("idProduct", {
+            idProduct: { $ne: product._id },
+            $or: listIdOrder
+        })
+
+        
+
+    console.log("Similar");
+    console.log(similarProduct);
 
     // console.log("similar")
     // console.log(similarProduct);
@@ -226,9 +238,17 @@ exports.findSimilarProduct = async (filter) => {
         }
     }
 
-    const result = await datamongoose.find({
+    result = await datamongoose.find({
         $or: listOjectIdProduct,
     })
+    }
+    else
+    {
+        result = await datamongoose.find({
+            idmanufacturer: product.idmanufacturer
+        }).limit(4);
+    }
+   
     // console.log("similarProduct")
     // console.log(result);
     return result;
