@@ -1,7 +1,7 @@
 const productService = require('../models/service/productService');
 const manufacturerService =require('../models/service/manufacturerService'); 
 const commentService = require('../models/service/commentService');
-
+const regulationsService = require('../models/service/regulationsService');
 // const datamongoose = require("../models/mongoose/productModel");
 // const manufacturerModel = require("../models/mongoose/manufacturerModel");
 // const { ObjectId } = require('mongodb');
@@ -12,6 +12,7 @@ exports.product = async(req, res, next) => {
     const newProduct = await productService.findNewProduct(3);
     const highLightProduct = await productService.findHighlightsProduct(3);
     const offerProduct= await productService.findOfferProduct(3);
+    const deliveryCharge = await regulationsService.getDeliveryCharge();
 
     console.log(newProduct[1]);
     
@@ -19,7 +20,15 @@ exports.product = async(req, res, next) => {
     console.log("req.protocol");
     console.log(req.get('Host'));
     console.log(req.protocol);
-    res.render('home/index', {newProduct,offerProduct, highLightProduct, isLogin: false, display: true, register: true});
+    res.render('home/index', {
+        newProduct,offerProduct,
+        highLightProduct,
+        isLogin: false,
+        display: true,
+        register: true,
+        deliveryCharge,
+        checkDeliveryCharge: deliveryCharge === "0" ? false : true
+    });
 
 };
 

@@ -786,7 +786,11 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 							</div>
 							<div class="col-8 text-form-footer">
 								<h3>Free Ship</h3>
-								<p>Với Đơn Hàng Từ 2 triệu</p>
+								{{#if checkDeliveryCharge}}
+									<p>Với Đơn Hàng Từ {{deliveryCharge}}đ</p>
+								{{else}}
+									<p>Với Mọi Đơn Hàng</p>
+								{{/if}}
 							</div>
 						</div>
 					</div>
